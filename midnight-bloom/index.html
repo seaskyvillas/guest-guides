@@ -205,6 +205,35 @@
   .item-body td{padding:6px 8px;border-bottom:1px solid var(--navy-800);}
   .item-body td:first-child{color:var(--gold-soft);white-space:nowrap;}
 
+  .item-body .photos{
+    display:flex;
+    gap:8px;
+    overflow-x:auto;
+    margin:4px 0 14px;
+    padding-bottom:2px;
+    -ms-overflow-style:none;
+    scrollbar-width:none;
+  }
+  .item-body .photos::-webkit-scrollbar{display:none;}
+  .item-body .photos img{
+    height:150px;
+    width:auto;
+    flex:0 0 auto;
+    border-radius:10px;
+    object-fit:cover;
+    border:1px solid var(--navy-800);
+    background:var(--navy-800);
+  }
+  .item-body .photos.single img{height:190px;}
+  .hero-photo{
+    display:block;
+    width:100%;
+    max-width:100%;
+    height:auto;
+    border-radius:var(--radius);
+    margin:22px 0 0;
+  }
+
   .emergency{
     background:var(--navy-900);
     border:1px solid var(--navy-800);
@@ -304,6 +333,8 @@
     <p id="villaIntro">A warm welcome to your home for the next few days. Everything you need to know about the villa is below — tap a section to open it.</p>
   </div>
 
+  <img class="hero-photo" src="images/welcome-pool.jpg" alt="Villa Midnight Bloom pool deck" style="border-radius:0;margin-top:0;">
+
   <div class="quickgrid" id="quickGrid"></div>
 
   <nav class="nav" id="quickNav"></nav>
@@ -346,7 +377,8 @@ const SECTIONS = [
     items: [
       {
         title: "Property managers",
-        body: `<p>Three property managers look after this villa. Your dedicated manager is <strong>Elijah</strong> — if you can't reach him, contact Hezron or Banco.</p>
+        body: `<div class="photos single"><img src="images/team-managers.jpg" alt="Elijah, Hezron and Banco, your property managers"></div>
+        <p>Three property managers look after this villa. Your dedicated manager is <strong>Elijah</strong> — if you can't reach him, contact Hezron or Banco.</p>
         <table>
           <tr><td>Elijah (primary)</td><td><a href="tel:+27798790941">+27 79 879 0941</a></td></tr>
           <tr><td>Hezron</td><td><a href="tel:+27760602127">+27 76 060 2127</a></td></tr>
@@ -355,7 +387,8 @@ const SECTIONS = [
       },
       {
         title: "Housekeeping",
-        body: `<p>Our housekeeper, <strong>Yandi</strong>, is dependable, professional and trustworthy.</p>
+        body: `<div class="photos single"><img src="images/team-housekeeper.jpg" alt="Yandi, your housekeeper"></div>
+        <p>Our housekeeper, <strong>Yandi</strong>, is dependable, professional and trustworthy.</p>
         <h4>Standard hours</h4>
         <ul>
           <li>Monday–Friday: 9:00am–4:00pm</li>
@@ -383,7 +416,8 @@ const SECTIONS = [
       },
       {
         title: "Keys",
-        body: `<ul>
+        body: `<div class="photos single"><img src="images/keys-remote.jpg" alt="Villa keys and gate remote"></div>
+        <ul>
           <li>One set of keys per bedroom, depending on guest numbers</li>
           <li>Each set has one remote and two silver keys (front door + pedestrian gate)</li>
         </ul>
@@ -399,7 +433,8 @@ const SECTIONS = [
       },
       {
         title: "Setting & disarming the alarm",
-        body: `<p>Alarm panels are in the garage, kitchen and main bedroom.</p>
+        body: `<div class="photos"><img src="images/alarm-panel-1.jpg" alt="Alarm touchscreen panel"><img src="images/alarm-panel-2.jpg" alt="Alarm arming method screen"></div>
+        <p>Alarm panels are in the garage, kitchen and main bedroom.</p>
         <h4>Away mode (leaving the villa)</h4>
         <ol><li>Press ARM/DISARM</li><li>Press ARM</li><li>Press ALL (outside/inside)</li><li>Press BYPASS & ARM</li></ol>
         <h4>Stay mode (for the night)</h4>
@@ -410,7 +445,8 @@ const SECTIONS = [
       },
       {
         title: "Safe instructions",
-        body: `<h4>Set or change the code</h4>
+        body: `<div class="photos single"><img src="images/safe.jpg" alt="In-room safe"></div>
+        <h4>Set or change the code</h4>
         <ol>
           <li>Leave the door open</li>
           <li>Locate the reset button inside the battery compartment (inside the door)</li>
@@ -479,7 +515,8 @@ const SECTIONS = [
       },
       {
         title: "Indemnity & house rules",
-        body: `<p>Everyone entering the villa and using its facilities does so at their own risk. The villa management company, owner, booking agent and their employees aren't liable for claims arising from death, injury, or loss of/damage to property, however caused. By booking and occupying the villa, you agree to this.</p>
+        body: `<div class="photos single"><img src="images/no-smoking.jpg" alt="No smoking indoors"></div>
+        <p>Everyone entering the villa and using its facilities does so at their own risk. The villa management company, owner, booking agent and their employees aren't liable for claims arising from death, injury, or loss of/damage to property, however caused. By booking and occupying the villa, you agree to this.</p>
         <div class="warn"><strong>Non-smoking property.</strong> Please smoke outside only — not inside, and not on the wooden deck. Smoking indoors will result in charges for professional air/furniture cleaning, plus any costs from delayed turnaround for the next guests.</div>`
       }
     ]
@@ -490,7 +527,8 @@ const SECTIONS = [
     items: [
       {
         title: "Microwave",
-        body: `<p>Top right unit in the kitchen.</p>
+        body: `<div class="photos single"><img src="images/microwave.jpg" alt="Microwave"></div>
+        <p>Top right unit in the kitchen.</p>
         <ol>
           <li>Press MENU</li>
           <li>Select Manual, press OK (✓)</li>
@@ -511,7 +549,8 @@ const SECTIONS = [
       },
       {
         title: "Induction stove",
-        body: `<h4>Turning it on</h4>
+        body: `<div class="photos"><img src="images/stove-hob.jpg" alt="Induction hob"><img src="images/stove-panel.jpg" alt="Induction stove control panel"></div>
+        <h4>Turning it on</h4>
         <p>Touch and hold ON/OFF for about a second — the display lights up with zeros at every zone.</p>
         <h4>Using a cooking zone</h4>
         <ul>
@@ -527,7 +566,8 @@ const SECTIONS = [
       },
       {
         title: "Steam & convection oven (top left)",
-        body: `<p>Whirlpool built-in combination steam oven — 34-litre capacity with a removable water tank. Combines steam cooking, convection baking, steam + convection, steam defrosting, reheating and automatic 6th Sense programs.</p>
+        body: `<div class="photos single"><img src="images/oven.jpg" alt="Built-in ovens"></div>
+        <p>Whirlpool built-in combination steam oven — 34-litre capacity with a removable water tank. Combines steam cooking, convection baking, steam + convection, steam defrosting, reheating and automatic 6th Sense programs.</p>
         <h4>Before starting</h4>
         <ol>
           <li>Open the door, remove all accessories</li>
@@ -598,7 +638,8 @@ const SECTIONS = [
       },
       {
         title: "Dishwasher",
-        body: `<p>Tall cupboard in the scullery, closest to the back door.</p>
+        body: `<div class="photos"><img src="images/dishwasher-1.jpg" alt="Dishwasher"><img src="images/dishwasher-2.jpg" alt="Dishwasher detail"><img src="images/dishwasher-3.jpg" alt="Dishwasher control panel"></div>
+        <p>Tall cupboard in the scullery, closest to the back door.</p>
         <ol>
           <li>Open the door, press the power button (far left)</li>
           <li>Place the tablet in the dispenser inside the door, close the flap</li>
@@ -614,7 +655,8 @@ const SECTIONS = [
     items: [
       {
         title: "Blinds & shutters (main bedroom)",
-        body: `<p>SOMFY remote is on the wall to the right of the bed (terrace side). Blinds/shutters are labelled 1–16 on the digital screen.</p>
+        body: `<div class="photos single"><img src="images/blinds-remote.jpg" alt="SOMFY blinds remote"></div>
+        <p>SOMFY remote is on the wall to the right of the bed (terrace side). Blinds/shutters are labelled 1–16 on the digital screen.</p>
         <ul>
           <li>"Study" = the nook with the sofas and coffee table</li>
           <li>"Bed" = main bedroom area</li>
@@ -629,7 +671,8 @@ const SECTIONS = [
       },
       {
         title: "Air conditioning",
-        body: `<h4>Main bedroom</h4>
+        body: `<div class="photos"><img src="images/aircon-main-bedroom.jpg" alt="Main bedroom aircon panel"><img src="images/aircon-remote.jpg" alt="Aircon remote for other bedrooms"></div>
+        <h4>Main bedroom</h4>
         <ul>
           <li>Control panel on the wall to the left of the bed (ocean side)</li>
           <li>Press ON/OFF (bottom right, above the Daikin logo)</li>
@@ -647,7 +690,8 @@ const SECTIONS = [
       },
       {
         title: "Television",
-        body: `<p>All TVs (main bedroom, cinema room, lounge) are smart TVs — use your own login for any app (Netflix, Prime, YouTube, etc).</p>
+        body: `<div class="photos single"><img src="images/tv-remote.jpg" alt="Smart TV remote"></div>
+        <p>All TVs (main bedroom, cinema room, lounge) are smart TVs — use your own login for any app (Netflix, Prime, YouTube, etc).</p>
         <ul>
           <li>Turn on with the small red button, top left of the remote</li>
           <li>Press the home (house) button for the app screen</li>
@@ -668,7 +712,8 @@ const SECTIONS = [
       },
       {
         title: "Gas fireplaces",
-        body: `<h4>Lounge</h4>
+        body: `<div class="photos"><img src="images/fireplace-1.jpg" alt="Lounge fireplace dial"><img src="images/fireplace-2.jpg" alt="Fireplace dial detail"><img src="images/fireplace-3.jpg" alt="Entrance fireplace stones"><img src="images/fireplace-stones.jpg" alt="Entrance fireplace gas switch"></div>
+        <h4>Lounge</h4>
         <ol>
           <li>Lift the small silver lid to the left of the fireplace</li>
           <li>Push the black dial down and turn anticlockwise until the igniter lights</li>
@@ -682,7 +727,8 @@ const SECTIONS = [
       },
       {
         title: "Security shutters",
-        body: `<p>Found in the lounge (door to back garden), kitchen back door, cinema room and main bedroom — each has its own SOMFY control panel.</p>
+        body: `<div class="photos single"><img src="images/shutters-panel.jpg" alt="Security shutter control panel"></div>
+        <p>Found in the lounge (door to back garden), kitchen back door, cinema room and main bedroom — each has its own SOMFY control panel.</p>
         <table>
           <tr><td>Main bedroom</td><td>Right as you walk in</td></tr>
           <tr><td>Lounge</td><td>Left of the door</td></tr>
@@ -693,7 +739,8 @@ const SECTIONS = [
       },
       {
         title: "Stacking doors",
-        body: `<ul>
+        body: `<div class="photos"><img src="images/stacking-door-1.jpg" alt="Stacking door handle"><img src="images/stacking-door-2.jpg" alt="Stacking door track"><img src="images/stacking-door-3.jpg" alt="Stacking door panel"><img src="images/stacking-door-4.jpg" alt="Stacking door handle detail"></div>
+        <ul>
           <li>Unlock with the handle before pushing — handle up = unlocked, handle down = locked (you'll see the door shift slightly)</li>
           <li>Once the first panel is open, latch it to the wall before stacking</li>
           <li>Slide each panel toward the latched one — you'll see a small ball appear in the gap above; pull the panel toward you and stack it</li>
@@ -709,7 +756,8 @@ const SECTIONS = [
     items: [
       {
         title: "Washing machine",
-        body: `<p>Laundry room, next to the garage.</p>
+        body: `<div class="photos"><img src="images/washer-panel.jpg" alt="Washing machine control panel"><img src="images/washer-open.jpg" alt="Washing machine open"></div>
+        <p>Laundry room, next to the garage.</p>
         <ol>
           <li>Press the power button to the left of the big round dial</li>
           <li>Press the middle of the round WASHING CYCLE button to select your cycle</li>
@@ -719,7 +767,8 @@ const SECTIONS = [
       },
       {
         title: "Tumble dryer",
-        body: `<p>Right next to the washing machine.</p>
+        body: `<div class="photos"><img src="images/dryer-top.jpg" alt="Tumble dryer top"><img src="images/dryer-dial.jpg" alt="Tumble dryer dial"></div>
+        <p>Right next to the washing machine.</p>
         <ol>
           <li>Use the round dial to select your cycle</li>
           <li>Press start</li>
