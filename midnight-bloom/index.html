@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<title>Villa Midnight Bloom — House Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy-950:#0f1320;
+    --navy-900:#161c2e;
+    --navy-800:#1e2740;
+    --navy-700:#2a3455;
+    --gold:#c9a26a;
+    --gold-soft:#e4cea0;
+    --cream:#f3ede1;
+    --muted:#9aa2c0;
+    --danger:#d97a6a;
+    --radius:14px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--navy-950);
+    color:var(--cream);
+    font-family:'Inter',system-ui,sans-serif;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.serif{font-family:'Fraunces',serif;}
+
+  a{color:var(--gold-soft);}
+
+  .wrap{max-width:640px;margin:0 auto;padding:0 0 64px;}
+
+  .hero{
+    position:relative;
+    padding:56px 24px 40px;
+    text-align:center;
+    background:
+      radial-gradient(120% 90% at 50% -10%, #253258 0%, var(--navy-950) 65%);
+    border-bottom:1px solid var(--navy-800);
+    overflow:hidden;
+  }
+  .hero svg{display:block;margin:0 auto 18px;width:120px;height:120px;opacity:.95;}
+  .logo-card{
+    display:inline-block;
+    background:var(--cream);
+    border-radius:12px;
+    padding:16px 26px;
+    margin:0 0 22px;
+  }
+  .logo-card svg{width:170px;height:auto;margin:0;display:block;}
+  .motif{width:64px;height:64px;margin:18px auto 0;opacity:.9;}
+  .hero .eyebrow{
+    font-size:13px;
+    letter-spacing:.04em;
+    color:var(--muted);
+    margin:0 0 6px;
+  }
+  .hero h1{
+    font-size:clamp(30px,7vw,40px);
+    font-weight:500;
+    margin:0 0 10px;
+    color:var(--cream);
+  }
+  .hero p{
+    max-width:44ch;
+    margin:0 auto;
+    color:var(--muted);
+    font-size:15px;
+  }
+
+  .quickgrid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:1px;
+    background:var(--navy-800);
+    border-top:1px solid var(--navy-800);
+    border-bottom:1px solid var(--navy-800);
+  }
+  .quickcard{
+    background:var(--navy-900);
+    padding:18px 20px;
+  }
+  .quickcard .label{
+    font-size:11px;
+    letter-spacing:.06em;
+    color:var(--muted);
+    margin-bottom:6px;
+  }
+  .quickcard .value{
+    font-size:15px;
+    font-weight:600;
+    color:var(--cream);
+    word-break:break-word;
+  }
+  .quickcard a.tel{color:var(--gold-soft);text-decoration:none;}
+  .quickcard .value small{display:block;font-weight:400;color:var(--muted);font-size:12px;margin-top:2px;}
+
+  .nav{
+    display:flex;
+    gap:8px;
+    overflow-x:auto;
+    padding:16px 20px;
+    -ms-overflow-style:none;
+    scrollbar-width:none;
+    position:sticky;
+    top:0;
+    background:rgba(15,19,32,.92);
+    backdrop-filter:blur(6px);
+    z-index:5;
+    border-bottom:1px solid var(--navy-800);
+  }
+  .nav::-webkit-scrollbar{display:none;}
+  .nav a{
+    flex:0 0 auto;
+    font-size:13px;
+    color:var(--muted);
+    text-decoration:none;
+    padding:7px 13px;
+    border:1px solid var(--navy-700);
+    border-radius:999px;
+    white-space:nowrap;
+  }
+  .nav a:active{background:var(--navy-800);color:var(--gold-soft);}
+
+  .group{
+    padding:8px 20px 0;
+    scroll-margin-top:64px;
+  }
+  .group-title{
+    display:flex;
+    align-items:baseline;
+    gap:10px;
+    margin:34px 0 12px;
+  }
+  .group-title h2{
+    font-size:20px;
+    font-weight:500;
+    margin:0;
+    color:var(--gold-soft);
+  }
+  .group-title .rule{flex:1;height:1px;background:var(--navy-800);}
+
+  details.item{
+    background:var(--navy-900);
+    border:1px solid var(--navy-800);
+    border-radius:var(--radius);
+    margin-bottom:10px;
+    overflow:hidden;
+  }
+  details.item + details.item{margin-top:10px;}
+  details.item summary{
+    list-style:none;
+    cursor:pointer;
+    padding:15px 18px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    font-weight:500;
+    font-size:15px;
+    color:var(--cream);
+  }
+  details.item summary::-webkit-details-marker{display:none;}
+  details.item summary .chev{
+    flex:0 0 auto;
+    width:20px;height:20px;
+    color:var(--gold);
+    transition:transform .2s ease;
+  }
+  details.item[open] summary .chev{transform:rotate(45deg);}
+  .item-body{
+    padding:0 18px 18px;
+    color:#dcdce8;
+    font-size:14.5px;
+  }
+  .item-body p{margin:0 0 10px;}
+  .item-body ul, .item-body ol{margin:0 0 10px;padding-left:20px;}
+  .item-body li{margin-bottom:5px;}
+  .item-body h4{
+    font-family:'Inter',sans-serif;
+    font-size:12.5px;
+    letter-spacing:.03em;
+    color:var(--gold-soft);
+    margin:14px 0 6px;
+    text-transform:uppercase;
+  }
+  .item-body h4:first-child{margin-top:0;}
+  .item-body .warn{
+    background:rgba(217,122,106,.12);
+    border:1px solid rgba(217,122,106,.35);
+    color:var(--gold-soft);
+    padding:10px 12px;
+    border-radius:10px;
+    font-size:13.5px;
+    margin:10px 0;
+  }
+  .item-body table{width:100%;border-collapse:collapse;margin:10px 0;font-size:13.5px;}
+  .item-body td{padding:6px 8px;border-bottom:1px solid var(--navy-800);}
+  .item-body td:first-child{color:var(--gold-soft);white-space:nowrap;}
+
+  .emergency{
+    background:var(--navy-900);
+    border:1px solid var(--navy-800);
+    border-radius:var(--radius);
+    padding:16px 18px;
+    margin-bottom:10px;
+  }
+  .emergency .row{
+    display:flex;
+    justify-content:space-between;
+    padding:7px 0;
+    border-bottom:1px solid var(--navy-800);
+    font-size:14px;
+  }
+  .emergency .row:last-child{border-bottom:none;}
+  .emergency .row span:first-child{color:var(--muted);}
+  .emergency .row a{text-decoration:none;font-weight:600;}
+
+  footer{
+    text-align:center;
+    padding:36px 24px 10px;
+    color:var(--muted);
+    font-size:12.5px;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="hero">
+    <div class="logo-card">
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 529.548 183.309" role="img" aria-label="SeaSky Villa Rentals logo">
+<defs>
+<clipPath id="clip-0"><path clip-rule="nonzero" d="M 77 35 L 138 35 L 138 103 L 77 103 Z M 77 35 "/></clipPath>
+<clipPath id="clip-1"><path clip-rule="nonzero" d="M 80.800781 55.648438 C 80.800781 69.570312 97.769531 72.140625 108.203125 73.421875 C 116.199219 74.703125 127.023438 74.703125 127.023438 85.664062 C 127.023438 97.617188 114.832031 100.183594 105.375 100.183594 C 96.402344 100.183594 83.824219 94.0625 82.457031 84.1875 C 82.359375 83.496094 82.261719 82.902344 81.777344 82.902344 C 81.289062 82.902344 81.191406 83.296875 80.703125 85.074219 L 77.582031 96.824219 C 88.3125 100.675781 94.550781 102.652344 106.058594 102.652344 C 120.195312 102.652344 137.945312 97.417969 137.945312 80.039062 C 137.945312 73.816406 135.316406 65.71875 117.855469 63.347656 C 102.9375 61.277344 91.722656 61.671875 91.722656 49.722656 C 91.722656 39.75 102.15625 37.96875 109.957031 37.96875 C 121.953125 37.96875 128.195312 43.796875 130.632812 50.710938 C 130.828125 51.105469 130.925781 51.300781 131.121094 51.300781 C 131.410156 51.300781 131.609375 50.808594 132.09375 49.230469 L 134.824219 39.75 C 126.828125 36.6875 118.445312 35.503906 109.859375 35.503906 C 96.597656 35.503906 80.800781 39.453125 80.800781 55.648438 "/></clipPath>
+<linearGradient id="linear-pattern-0" gradientUnits="userSpaceOnUse" x1="0.181999" y1="0" x2="0.92866" y2="0" gradientTransform="matrix(0, -89.933563, -89.933563, 0, 107.763471, 119.01989)">
+<stop offset="0" stop-color="rgb(17.396545%, 36.958313%, 57.737732%)" stop-opacity="1"/>
+<stop offset="1" stop-color="rgb(15.493774%, 25.079346%, 53.598022%)" stop-opacity="1"/>
+</linearGradient>
+<clipPath id="clip-2"><path clip-rule="nonzero" d="M 145 48 L 201 48 L 201 103 L 145 103 Z M 145 48 "/></clipPath>
+<clipPath id="clip-3"><path clip-rule="nonzero" d="M 145.507812 75.59375 C 145.507812 91.394531 157.796875 102.753906 174.375 102.753906 C 187.636719 102.753906 197.386719 94.554688 200.507812 80.929688 L 198.460938 80.929688 C 195.144531 92.480469 186.859375 100.28125 175.640625 100.28125 C 166.183594 100.28125 156.820312 93.46875 156.820312 75.101562 C 156.820312 73.03125 156.921875 70.953125 157.113281 68.683594 L 199.238281 68.683594 C 197.878906 54.957031 185.003906 48.4375 174.375 48.4375 C 157.796875 48.4375 145.507812 59.796875 145.507812 75.59375 M 172.230469 50.316406 C 182.371094 50.316406 186.953125 57.128906 186.953125 66.808594 L 157.503906 66.808594 C 158.578125 58.3125 163.355469 50.316406 172.230469 50.316406 "/></clipPath>
+<linearGradient id="linear-pattern-1" gradientUnits="userSpaceOnUse" x1="0.187475" y1="0" x2="0.791402" y2="0" gradientTransform="matrix(0, -89.933563, -89.933563, 0, 173.009517, 119.612991)">
+<stop offset="0" stop-color="rgb(17.366028%, 36.798096%, 57.691956%)" stop-opacity="1"/>
+<stop offset="1" stop-color="rgb(15.600586%, 25.869751%, 53.930664%)" stop-opacity="1"/>
+</linearGradient>
+<clipPath id="clip-4"><path clip-rule="nonzero" d="M 208 48 L 262 48 L 262 103 L 208 103 Z M 208 48 "/></clipPath>
+<clipPath id="clip-5"><path clip-rule="nonzero" d="M 210.710938 53.375 L 213.25 62.265625 C 213.441406 62.855469 213.542969 63.347656 213.738281 63.347656 C 213.933594 63.347656 214.125 62.558594 214.515625 61.671875 C 218.027344 52.980469 223.292969 50.316406 232.265625 50.316406 C 242.113281 50.316406 246.5 57.027344 246.5 66.507812 L 246.5 69.769531 L 240.941406 69.769531 C 230.703125 69.769531 208.078125 71.25 208.078125 86.257812 C 208.078125 98.011719 218.511719 102.753906 228.65625 102.753906 C 237.238281 102.753906 242.890625 99.195312 246.695312 91.195312 L 246.890625 91.195312 C 247.085938 94.652344 247.863281 98.109375 249.230469 101.269531 L 259.765625 101.269531 C 260.445312 101.269531 261.03125 101.171875 261.03125 100.875 C 261.03125 100.578125 260.640625 100.578125 260.054688 100.28125 C 257.03125 98.898438 256.546875 95.9375 256.546875 92.679688 L 256.546875 64.929688 C 256.546875 52.488281 244.84375 48.4375 233.726562 48.4375 C 225.046875 48.4375 218.707031 49.132812 210.710938 53.375 M 219.390625 87.84375 C 219.390625 74.808594 230.214844 71.648438 240.75 71.648438 L 246.5 71.648438 L 246.5 78.558594 C 246.5 88.039062 242.988281 100.28125 231.484375 100.28125 C 224.5625 100.28125 219.390625 95.046875 219.390625 87.84375 "/></clipPath>
+<linearGradient id="linear-pattern-2" gradientUnits="userSpaceOnUse" x1="0.187475" y1="0" x2="0.791402" y2="0" gradientTransform="matrix(0, -89.933563, -89.933563, 0, 234.555499, 119.612991)">
+<stop offset="0" stop-color="rgb(17.366028%, 36.798096%, 57.691956%)" stop-opacity="1"/>
+<stop offset="1" stop-color="rgb(15.600586%, 25.869751%, 53.930664%)" stop-opacity="1"/>
+</linearGradient>
+<clipPath id="clip-6"><path clip-rule="nonzero" d="M 268 35 L 329 35 L 329 103 L 268 103 Z M 268 35 "/></clipPath>
+<clipPath id="clip-7"><path clip-rule="nonzero" d="M 271.585938 55.648438 C 271.585938 69.570312 288.550781 72.140625 298.988281 73.421875 C 306.984375 74.703125 317.808594 74.703125 317.808594 85.664062 C 317.808594 97.617188 305.617188 100.183594 296.160156 100.183594 C 287.1875 100.183594 274.609375 94.0625 273.242188 84.1875 C 273.144531 83.496094 273.046875 82.902344 272.558594 82.902344 C 272.074219 82.902344 271.976562 83.296875 271.488281 85.074219 L 268.371094 96.824219 C 279.09375 100.675781 285.335938 102.652344 296.84375 102.652344 C 310.980469 102.652344 328.730469 97.417969 328.730469 80.039062 C 328.730469 73.816406 326.097656 65.71875 308.640625 63.347656 C 293.722656 61.277344 282.507812 61.671875 282.507812 49.722656 C 282.507812 39.75 292.941406 37.96875 300.742188 37.96875 C 312.738281 37.96875 318.980469 43.796875 321.417969 50.710938 C 321.613281 51.105469 321.710938 51.300781 321.90625 51.300781 C 322.195312 51.300781 322.390625 50.808594 322.882812 49.230469 L 325.609375 39.75 C 317.613281 36.6875 309.226562 35.503906 300.644531 35.503906 C 287.382812 35.503906 271.585938 39.453125 271.585938 55.648438 "/></clipPath>
+<linearGradient id="linear-pattern-3" gradientUnits="userSpaceOnUse" x1="0.181999" y1="0" x2="0.92866" y2="0" gradientTransform="matrix(0, -89.933563, -89.933563, 0, 298.549786, 119.01989)">
+<stop offset="0" stop-color="rgb(17.396545%, 36.958313%, 57.737732%)" stop-opacity="1"/>
+<stop offset="1" stop-color="rgb(15.493774%, 25.079346%, 53.598022%)" stop-opacity="1"/>
+</linearGradient>
+<clipPath id="clip-8"><path clip-rule="nonzero" d="M 336 31 L 394 31 L 394 103 L 336 103 Z M 336 31 "/></clipPath>
+<clipPath id="clip-9"><path clip-rule="nonzero" d="M 338.660156 34.539062 C 337.683594 34.835938 336.808594 35.03125 336.808594 35.328125 C 336.808594 35.722656 337.390625 36.019531 338.464844 36.214844 C 341.679688 36.710938 342.074219 41.253906 342.074219 47.082031 L 342.074219 86.28125 C 342.074219 94.578125 341.679688 100.40625 337.003906 101.886719 C 336.609375 102.082031 336.320312 102.183594 336.320312 102.476562 C 336.320312 102.777344 336.808594 102.972656 337.292969 102.972656 C 337.878906 102.972656 341.78125 102.675781 347.042969 102.675781 C 352.410156 102.675781 356.703125 102.972656 357.1875 102.972656 C 357.773438 102.972656 358.257812 102.777344 358.257812 102.476562 C 358.257812 102.183594 357.871094 101.984375 357.382812 101.886719 C 352.605469 100.207031 352.117188 96.457031 352.117188 90.234375 L 352.117188 83.121094 C 352.117188 78.875 352.117188 74.929688 355.53125 74.929688 C 360.796875 74.929688 365.085938 83.617188 367.132812 87.074219 L 376.496094 102.972656 C 378.449219 102.972656 380.691406 102.675781 382.933594 102.675781 C 387.808594 102.675781 392.199219 102.972656 392.6875 102.972656 C 393.269531 102.972656 393.757812 102.777344 393.757812 102.476562 C 393.757812 102.183594 393.269531 101.984375 392.78125 101.785156 C 387.515625 99.316406 383.421875 93.789062 380.105469 88.453125 C 373.375 77.59375 370.449219 72.460938 357.1875 72.160156 L 357.1875 71.964844 L 371.621094 60.902344 C 376.203125 57.351562 381.859375 53.894531 387.417969 52.511719 C 388.980469 52.117188 390.636719 52.015625 390.636719 51.523438 C 390.636719 50.933594 390.148438 50.933594 389.269531 50.933594 C 386.148438 50.933594 384.980469 51.328125 380.203125 51.328125 C 375.132812 51.328125 371.71875 50.933594 370.839844 50.933594 C 370.0625 50.933594 369.476562 50.933594 369.476562 51.328125 C 369.476562 51.820312 370.0625 51.820312 370.449219 52.117188 C 370.9375 52.609375 372.105469 53.402344 372.105469 54.78125 C 372.105469 56.460938 370.742188 58.042969 368.5 59.917969 L 352.117188 73.742188 L 352.117188 31.082031 C 347.433594 32.367188 343.339844 33.355469 338.660156 34.539062 "/></clipPath>
+<linearGradient id="linear-pattern-4" gradientUnits="userSpaceOnUse" x1="0.200671" y1="0" x2="1.000006" y2="0" gradientTransform="matrix(0, -89.933563, -89.933563, 0, 365.038135, 121.017942)">
+<stop offset="0" stop-color="rgb(17.295837%, 36.413574%, 57.583618%)" stop-opacity="1"/>
+<stop offset="1" stop-color="rgb(15.47699%, 24.952698%, 53.543091%)" stop-opacity="1"/>
+</linearGradient>
+<clipPath id="clip-10"><path clip-rule="nonzero" d="M 401 48 L 463 48 L 463 121 L 401 121 Z M 401 48 "/></clipPath>
+<clipPath id="clip-11"><path clip-rule="nonzero" d="M 454.070312 49.328125 C 449.878906 49.328125 447.4375 48.933594 446.367188 48.933594 C 445.683594 48.933594 445.195312 48.933594 445.195312 49.328125 C 445.195312 49.917969 445.488281 50.117188 446.074219 50.3125 C 448.707031 51.105469 450.464844 52.78125 450.464844 56.339844 C 450.464844 60.089844 447.636719 66.609375 444.417969 73.125 L 435.738281 90.015625 L 421.304688 62.855469 C 420.332031 61.179688 418.28125 56.535156 418.28125 54.167969 C 418.28125 50.710938 420.230469 50.511719 421.988281 49.820312 C 422.378906 49.722656 422.574219 49.621094 422.574219 49.328125 C 422.574219 48.933594 422.085938 48.933594 421.207031 48.933594 C 418.089844 48.933594 416.914062 49.328125 412.140625 49.328125 C 406.96875 49.328125 405.800781 48.933594 402.683594 48.933594 C 401.898438 48.933594 401.316406 48.933594 401.316406 49.328125 C 401.316406 49.621094 401.507812 49.917969 401.800781 49.917969 C 405.117188 51.597656 406.582031 54.363281 408.140625 57.328125 L 422.671875 86.851562 C 424.71875 91.097656 427.839844 97.515625 427.839844 101.464844 C 427.839844 107.09375 424.523438 113.511719 418.183594 113.511719 C 415.554688 113.511719 412.140625 112.722656 411.066406 109.960938 C 411.066406 109.761719 410.96875 109.566406 410.773438 109.566406 C 410.480469 109.566406 410.285156 110.648438 409.894531 111.835938 L 406.875 120.226562 C 413.308594 120.425781 417.992188 119.339844 421.890625 116.378906 C 426.863281 112.722656 430.863281 105.515625 433.6875 99.785156 L 451.339844 65.324219 C 453.292969 61.574219 458.945312 52.292969 462.261719 50.019531 C 462.558594 49.820312 462.75 49.621094 462.75 49.328125 C 462.75 48.933594 462.359375 48.933594 461.578125 48.933594 C 460.800781 48.933594 458.066406 49.328125 454.070312 49.328125 "/></clipPath>
+<linearGradient id="linear-pattern-5" gradientUnits="userSpaceOnUse" x1="-0.0156465" y1="0" x2="0.779313" y2="0" gradientTransform="matrix(0, -89.933555, -89.933555, 0, 432.032116, 119.01989)">
+<stop offset="0" stop-color="rgb(18.537903%, 42.810059%, 59.188843%)" stop-opacity="1"/>
+<stop offset="1" stop-color="rgb(15.609741%, 25.942993%, 53.961182%)" stop-opacity="1"/>
+</linearGradient>
+</defs>
+<path fill-rule="nonzero" fill="rgb(13.497925%, 12.332153%, 16.08429%)" fill-opacity="1" d="M 264.816406 120.066406 C 259.765625 120.066406 253.457031 118.636719 246.152344 116.980469 C 234.796875 114.410156 220.671875 111.207031 203.101562 111.207031 C 188.96875 111.207031 183.058594 113.257812 176.800781 115.433594 C 170.242188 117.710938 163.464844 120.066406 146.695312 120.066406 C 129.933594 120.066406 122.28125 117.714844 114.882812 115.4375 C 107.800781 113.261719 101.113281 111.207031 86.972656 111.207031 C 72.257812 111.207031 63.363281 113.492188 54.761719 115.699219 C 46.402344 117.847656 37.757812 120.066406 23.933594 120.066406 L 23.933594 119.175781 C 37.652344 119.175781 45.859375 117.070312 54.546875 114.835938 C 63.199219 112.613281 72.148438 110.316406 86.972656 110.316406 C 101.242188 110.316406 107.992188 112.390625 115.132812 114.585938 C 122.476562 116.84375 130.0625 119.175781 146.695312 119.175781 C 163.316406 119.175781 170.027344 116.847656 176.515625 114.589844 C 182.84375 112.390625 188.820312 110.316406 203.101562 110.316406 C 220.765625 110.316406 234.945312 113.53125 246.339844 116.113281 C 253.597656 117.757812 259.863281 119.175781 264.816406 119.175781 Z M 264.816406 120.066406 "/>
+<path fill-rule="nonzero" fill="rgb(13.497925%, 12.332153%, 16.08429%)" fill-opacity="1" d="M 505.695312 120.066406 C 500.644531 120.066406 494.335938 118.636719 487.03125 116.980469 C 475.679688 114.410156 461.554688 111.207031 443.984375 111.207031 C 429.847656 111.207031 423.9375 113.257812 417.679688 115.433594 C 411.125 117.710938 404.34375 120.066406 387.578125 120.066406 C 370.816406 120.066406 363.164062 117.714844 355.761719 115.4375 C 348.683594 113.261719 341.996094 111.207031 327.855469 111.207031 C 313.140625 111.207031 304.246094 113.492188 295.644531 115.699219 C 287.285156 117.847656 278.640625 120.066406 264.816406 120.066406 L 264.816406 119.175781 C 278.53125 119.175781 286.738281 117.070312 295.429688 114.835938 C 304.082031 112.613281 313.03125 110.316406 327.855469 110.316406 C 342.125 110.316406 348.871094 112.390625 356.015625 114.585938 C 363.355469 116.84375 370.945312 119.175781 387.578125 119.175781 C 404.199219 119.175781 410.910156 116.847656 417.398438 114.589844 C 423.726562 112.390625 429.703125 110.316406 443.984375 110.316406 C 461.648438 110.316406 475.828125 113.53125 487.222656 116.113281 C 494.476562 117.757812 500.742188 119.175781 505.695312 119.175781 Z M 505.695312 120.066406 "/>
+<g clip-path="url(#clip-0)"><g clip-path="url(#clip-1)"><path fill-rule="nonzero" fill="url(#linear-pattern-0)" d="M 137.945312 102.652344 L 77.582031 102.652344 L 77.582031 35.503906 L 137.945312 35.503906 Z M 137.945312 102.652344 "/></g></g>
+<g clip-path="url(#clip-2)"><g clip-path="url(#clip-3)"><path fill-rule="nonzero" fill="url(#linear-pattern-1)" d="M 200.507812 102.753906 L 145.507812 102.753906 L 145.507812 48.4375 L 200.507812 48.4375 Z M 200.507812 102.753906 "/></g></g>
+<g clip-path="url(#clip-4)"><g clip-path="url(#clip-5)"><path fill-rule="nonzero" fill="url(#linear-pattern-2)" d="M 261.03125 102.753906 L 208.078125 102.753906 L 208.078125 48.4375 L 261.03125 48.4375 Z M 261.03125 102.753906 "/></g></g>
+<g clip-path="url(#clip-6)"><g clip-path="url(#clip-7)"><path fill-rule="nonzero" fill="url(#linear-pattern-3)" d="M 328.730469 102.652344 L 268.371094 102.652344 L 268.371094 35.503906 L 328.730469 35.503906 Z M 328.730469 102.652344 "/></g></g>
+<g clip-path="url(#clip-8)"><g clip-path="url(#clip-9)"><path fill-rule="nonzero" fill="url(#linear-pattern-4)" d="M 393.757812 102.972656 L 336.320312 102.972656 L 336.320312 31.082031 L 393.757812 31.082031 Z M 393.757812 102.972656 "/></g></g>
+<g clip-path="url(#clip-10)"><g clip-path="url(#clip-11)"><path fill-rule="nonzero" fill="url(#linear-pattern-5)" d="M 462.75 120.425781 L 401.316406 120.425781 L 401.316406 48.933594 L 462.75 48.933594 Z M 462.75 120.425781 "/></g></g>
+<path fill-rule="nonzero" fill="rgb(13.497925%, 12.332153%, 16.08429%)" fill-opacity="1" d="M 174.539062 167.613281 L 180.878906 150.164062 L 179.535156 150.164062 L 175.148438 162.421875 L 173.757812 166.53125 L 172.296875 162.398438 L 167.910156 150.164062 L 166.582031 150.164062 L 172.980469 167.613281 Z M 188.039062 150.164062 L 186.746094 150.164062 L 186.746094 167.613281 L 188.039062 167.613281 Z M 204.917969 167.613281 L 204.917969 166.582031 L 196.757812 166.582031 L 196.757812 150.164062 L 195.464844 150.164062 L 195.464844 167.613281 Z M 219.28125 167.613281 L 219.28125 166.582031 L 211.121094 166.582031 L 211.121094 150.164062 L 209.828125 150.164062 L 209.828125 167.613281 Z M 227.652344 156.585938 L 229.5 151.242188 L 231.367188 156.585938 L 233.226562 161.945312 L 225.808594 161.945312 Z M 223.769531 167.613281 L 225.484375 162.832031 L 233.5625 162.832031 L 235.273438 167.613281 L 236.617188 167.613281 L 230.277344 150.164062 L 228.671875 150.164062 L 222.320312 167.613281 Z M 252.339844 151.195312 L 256.222656 151.195312 C 257.796875 151.132812 258.949219 151.378906 259.675781 151.9375 C 260.402344 152.496094 260.765625 153.417969 260.765625 154.707031 C 260.765625 155.976562 260.425781 156.929688 259.746094 157.570312 C 259.066406 158.210938 258.011719 158.527344 256.582031 158.527344 L 252.339844 158.527344 Z M 252.304688 167.613281 L 252.304688 159.558594 L 256.929688 159.558594 C 257.304688 159.558594 257.625 159.574219 257.882812 159.605469 C 258.140625 159.640625 258.382812 159.710938 258.601562 159.824219 C 258.820312 159.933594 259.003906 160.054688 259.148438 160.183594 C 259.292969 160.308594 259.4375 160.511719 259.585938 160.789062 C 259.734375 161.0625 259.863281 161.335938 259.972656 161.601562 C 260.085938 161.871094 260.226562 162.242188 260.394531 162.722656 L 262.121094 167.613281 L 263.328125 167.613281 L 261.519531 162.449219 C 261.390625 162.085938 261.292969 161.816406 261.226562 161.632812 C 261.15625 161.449219 261.074219 161.230469 260.96875 160.980469 C 260.867188 160.726562 260.773438 160.542969 260.699219 160.421875 C 260.625 160.300781 260.527344 160.160156 260.410156 160.003906 C 260.296875 159.84375 260.179688 159.722656 260.0625 159.648438 C 259.949219 159.574219 259.804688 159.492188 259.640625 159.402344 C 259.46875 159.316406 259.292969 159.246094 259.097656 159.195312 C 258.90625 159.140625 258.683594 159.097656 258.429688 159.054688 C 259.59375 158.960938 260.480469 158.519531 261.089844 157.730469 C 261.695312 156.945312 262 155.9375 262 154.707031 C 262 153.117188 261.542969 151.960938 260.628906 151.242188 C 259.710938 150.523438 258.242188 150.164062 256.222656 150.164062 L 251.011719 150.164062 L 251.011719 167.613281 Z M 279.371094 167.613281 L 279.371094 166.582031 L 270.574219 166.582031 L 270.574219 159.210938 L 278.542969 159.210938 L 278.542969 158.179688 L 270.597656 158.179688 L 270.597656 151.195312 L 279.011719 151.195312 L 279.011719 150.164062 L 269.304688 150.164062 L 269.304688 167.613281 Z M 287.023438 167.613281 L 287.023438 151.996094 L 288.328125 153.988281 L 297.953125 167.613281 L 299.210938 167.613281 L 299.210938 150.164062 L 297.941406 150.164062 L 297.941406 165.910156 L 296.417969 163.597656 L 287.023438 150.164062 L 285.753906 150.164062 L 285.753906 167.613281 Z M 310.949219 167.613281 L 310.949219 151.195312 L 316.773438 151.195312 L 316.773438 150.164062 L 303.832031 150.164062 L 303.832031 151.195312 L 309.65625 151.195312 L 309.65625 167.613281 Z M 324.867188 156.585938 L 326.714844 151.242188 L 328.582031 156.585938 L 330.441406 161.945312 L 323.023438 161.945312 Z M 320.984375 167.613281 L 322.699219 162.832031 L 330.777344 162.832031 L 332.488281 167.613281 L 333.832031 167.613281 L 327.492188 150.164062 L 325.886719 150.164062 L 319.535156 167.613281 Z M 348.625 167.613281 L 348.625 166.582031 L 340.464844 166.582031 L 340.464844 150.164062 L 339.171875 150.164062 L 339.171875 167.613281 Z M 361.804688 166.613281 C 362.769531 165.777344 363.273438 164.664062 363.3125 163.273438 C 363.335938 162.5625 363.289062 161.96875 363.175781 161.488281 C 363.058594 161.007812 362.828125 160.558594 362.484375 160.140625 C 362.140625 159.71875 361.65625 159.359375 361.03125 159.054688 C 360.402344 158.753906 359.585938 158.472656 358.578125 158.21875 L 356.804688 157.761719 C 355.582031 157.441406 354.757812 157.039062 354.324219 156.558594 C 353.894531 156.074219 353.679688 155.3125 353.679688 154.273438 C 353.679688 153.203125 354.039062 152.375 354.757812 151.78125 C 355.476562 151.191406 356.484375 150.894531 357.789062 150.894531 C 358.378906 150.894531 358.929688 150.949219 359.4375 151.050781 C 359.941406 151.15625 360.363281 151.292969 360.695312 151.464844 C 361.027344 151.636719 361.285156 151.789062 361.46875 151.921875 C 361.648438 152.050781 361.808594 152.183594 361.933594 152.308594 L 362.5 151.421875 C 362.488281 151.414062 362.429688 151.363281 362.316406 151.265625 C 362.207031 151.171875 362.097656 151.085938 361.988281 151.007812 C 361.878906 150.933594 361.730469 150.835938 361.539062 150.714844 C 361.347656 150.597656 361.132812 150.492188 360.890625 150.402344 C 360.652344 150.316406 360.382812 150.226562 360.082031 150.140625 C 359.785156 150.050781 359.4375 149.984375 359.039062 149.9375 C 358.644531 149.890625 358.226562 149.863281 357.789062 149.863281 C 356.09375 149.863281 354.769531 150.257812 353.816406 151.039062 C 352.863281 151.824219 352.382812 152.898438 352.382812 154.273438 C 352.382812 155.167969 352.546875 155.917969 352.875 156.523438 C 353.203125 157.125 353.65625 157.601562 354.234375 157.949219 C 354.8125 158.296875 355.574219 158.59375 356.519531 158.839844 L 358.304688 159.308594 C 359.101562 159.515625 359.742188 159.726562 360.226562 159.941406 C 360.710938 160.15625 361.097656 160.425781 361.394531 160.738281 C 361.691406 161.054688 361.886719 161.410156 361.988281 161.800781 C 362.089844 162.191406 362.125 162.6875 362.101562 163.285156 C 362.0625 164.347656 361.664062 165.203125 360.902344 165.855469 C 360.144531 166.507812 359.136719 166.832031 357.871094 166.832031 C 357.351562 166.832031 356.847656 166.78125 356.363281 166.675781 C 355.875 166.574219 355.484375 166.464844 355.195312 166.355469 C 354.902344 166.242188 354.585938 166.074219 354.246094 165.855469 C 353.90625 165.636719 353.695312 165.492188 353.613281 165.417969 C 353.527344 165.347656 353.378906 165.214844 353.164062 165.023438 L 352.550781 165.910156 C 352.566406 165.917969 352.648438 165.988281 352.796875 166.121094 C 352.945312 166.253906 353.082031 166.363281 353.210938 166.449219 C 353.339844 166.539062 353.519531 166.660156 353.757812 166.816406 C 353.992188 166.96875 354.242188 167.101562 354.511719 167.210938 C 354.777344 167.316406 355.082031 167.425781 355.414062 167.535156 C 355.75 167.640625 356.128906 167.722656 356.546875 167.777344 C 356.96875 167.835938 357.410156 167.863281 357.871094 167.863281 C 359.527344 167.863281 360.835938 167.445312 361.804688 166.613281 "/>
+</svg>
+    </div>
+    <p class="eyebrow" id="villaEyebrow">SEASKY VILLAS · CAMPS BAY</p>
+    <h1 id="villaName">Villa Midnight Bloom</h1>
+    <svg class="motif" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M78 22c-14 3-24 16-24 31s10 28 24 31c-3 1-7 1-10 1-18 0-32-14-32-32s14-32 32-32c3 0 7 0 10 1z" stroke="#c9a26a" stroke-width="1.4"/>
+      <g stroke="#e4cea0" stroke-width="1.2">
+        <ellipse cx="60" cy="92" rx="7" ry="14" transform="rotate(0 60 92)"/>
+        <ellipse cx="60" cy="92" rx="7" ry="14" transform="rotate(60 60 92)"/>
+        <ellipse cx="60" cy="92" rx="7" ry="14" transform="rotate(120 60 92)"/>
+        <ellipse cx="60" cy="92" rx="7" ry="14" transform="rotate(180 60 92)"/>
+        <ellipse cx="60" cy="92" rx="7" ry="14" transform="rotate(240 60 92)"/>
+        <ellipse cx="60" cy="92" rx="7" ry="14" transform="rotate(300 60 92)"/>
+        <circle cx="60" cy="92" r="3" fill="#c9a26a" stroke="none"/>
+      </g>
+      <path d="M60 78V54" stroke="#7d8ab0" stroke-width="1.2"/>
+    </svg>
+    <p id="villaIntro">A warm welcome to your home for the next few days. Everything you need to know about the villa is below — tap a section to open it.</p>
+  </div>
+
+  <div class="quickgrid" id="quickGrid"></div>
+
+  <nav class="nav" id="quickNav"></nav>
+
+  <div id="content"></div>
+
+  <footer>
+    Managed by SeaSky Villas · For anything not covered here, contact your property manager above.
+  </footer>
+</div>
+
+<script>
+const CONFIG = {
+  villaName: "Villa Midnight Bloom",
+  location: "Camps Bay",
+  manager: { name: "Elijah", phone: "+27 79 879 0941" },
+  wifi: { network: "Midnight Bloom", password: "abcdef3008" },
+  emergencyHeadline: "112",
+  alarmCode: "6258"
+};
+
+document.getElementById("villaName").textContent = CONFIG.villaName;
+document.getElementById("villaEyebrow").textContent = `SEASKY VILLAS · ${CONFIG.location.toUpperCase()}`;
+
+document.getElementById("quickGrid").innerHTML = `
+  <div class="quickcard">
+    <div class="label">WI-FI NETWORK</div>
+    <div class="value">${CONFIG.wifi.network}<small>Password: ${CONFIG.wifi.password}</small></div>
+  </div>
+  <div class="quickcard">
+    <div class="label">YOUR PROPERTY MANAGER</div>
+    <div class="value"><a class="tel" href="tel:${CONFIG.manager.phone.replace(/\s/g,'')}">${CONFIG.manager.name}</a><small>${CONFIG.manager.phone}</small></div>
+  </div>
+`;
+
+const SECTIONS = [
+  {
+    id: "team",
+    title: "Your Team",
+    items: [
+      {
+        title: "Property managers",
+        body: `<p>Three property managers look after this villa. Your dedicated manager is <strong>Elijah</strong> — if you can't reach him, contact Hezron or Banco.</p>
+        <table>
+          <tr><td>Elijah (primary)</td><td><a href="tel:+27798790941">+27 79 879 0941</a></td></tr>
+          <tr><td>Hezron</td><td><a href="tel:+27760602127">+27 76 060 2127</a></td></tr>
+          <tr><td>Banco</td><td><a href="tel:+27784614767">+27 78 461 4767</a></td></tr>
+        </table>`
+      },
+      {
+        title: "Housekeeping",
+        body: `<p>Our housekeeper, <strong>Yandi</strong>, is dependable, professional and trustworthy.</p>
+        <h4>Standard hours</h4>
+        <ul>
+          <li>Monday–Friday: 9:00am–4:00pm</li>
+          <li>Weekends & public holidays: by prior arrangement, additional charge — please enquire with management</li>
+        </ul>
+        <p>Need her outside these hours? Arrange directly with Yandi or with whoever assists your check-in. She's off on weekends, but SeaSky will gladly arrange an alternative housekeeper.</p>
+        <p>Yandi: <a href="tel:+27790702648">+27 79 070 2648</a></p>
+        <p>Her role covers cleanliness of the house and grounds, plus washing/ironing of villa linen and towels. The washing machine and washing line are available for guest use, but personal laundry isn't part of her duties.</p>
+        <h4>Gratuities</h4>
+        <p>If Yandi has taken great care of you, gratuities are always appreciated — particularly for larger groups.</p>
+        <h4>Self-catering</h4>
+        <p>A starter supply of cleaning materials and toilet paper is provided. Additional supplies (laundry detergent, other consumables) are for your own account.</p>`
+      }
+    ]
+  },
+  {
+    id: "essentials",
+    title: "Wi-Fi, Keys & Alarm",
+    items: [
+      {
+        title: "Internet",
+        body: `<p>Network: <strong>${CONFIG.wifi.network}</strong> · Password: <strong>${CONFIG.wifi.password}</strong></p>
+        <p>Uncapped fibre, free throughout the villa. This is the fastest service we can provide for the area — apologies if it's slower than you're used to.</p>
+        <p>If the Wi-Fi drops, please don't touch any cables — call your property manager to sort it out.</p>`
+      },
+      {
+        title: "Keys",
+        body: `<ul>
+          <li>One set of keys per bedroom, depending on guest numbers</li>
+          <li>Each set has one remote and two silver keys (front door + pedestrian gate)</li>
+        </ul>
+        <h4>Remote buttons</h4>
+        <table>
+          <tr><td>Red</td><td>Panic</td></tr>
+          <tr><td>Brown</td><td>Not in use</td></tr>
+          <tr><td>Purple</td><td>Not in use — do not press</td></tr>
+          <tr><td>Yellow</td><td>Garage on left (facing the house)</td></tr>
+          <tr><td>Green</td><td>Right sliding gate</td></tr>
+          <tr><td>Blue</td><td>Left sliding gate</td></tr>
+        </table>`
+      },
+      {
+        title: "Setting & disarming the alarm",
+        body: `<p>Alarm panels are in the garage, kitchen and main bedroom.</p>
+        <h4>Away mode (leaving the villa)</h4>
+        <ol><li>Press ARM/DISARM</li><li>Press ARM</li><li>Press ALL (outside/inside)</li><li>Press BYPASS & ARM</li></ol>
+        <h4>Stay mode (for the night)</h4>
+        <ol><li>Press ARM/DISARM</li><li>Press STAY</li><li>Press FORCE ARM</li></ol>
+        <p>You can then move freely inside, but not outside.</p>
+        <h4>Disarm</h4>
+        <p>Punch in <strong>${CONFIG.alarmCode}</strong>, then OK.</p>`
+      },
+      {
+        title: "Safe instructions",
+        body: `<h4>Set or change the code</h4>
+        <ol>
+          <li>Leave the door open</li>
+          <li>Locate the reset button inside the battery compartment (inside the door)</li>
+          <li>Press it once — you'll hear a beep or see a light</li>
+          <li>Enter your new code (3–8 digits)</li>
+          <li>Press ✓ to confirm — the safe beeps or flashes green</li>
+        </ol>
+        <h4>Test before closing</h4>
+        <ol>
+          <li>With the door open, extend the locking bolts by turning the handle</li>
+          <li>Enter the new code, press ✓</li>
+          <li>Confirm the bolts retract</li>
+          <li>Repeat once more, then close and lock</li>
+        </ol>`
+      }
+    ]
+  },
+  {
+    id: "safety",
+    title: "Emergency & Safety",
+    items: [
+      {
+        title: "Emergency numbers",
+        body: `<div class="emergency">
+          <div class="row"><span>Emergency Hotline</span><a href="tel:112">112 mobile / 107 landline</a></div>
+          <div class="row"><span>Ambulance (Public EMS)</span><a href="tel:10177">10177</a></div>
+          <div class="row"><span>Private Ambulance (ER24)</span><a href="tel:084124">084 124</a></div>
+          <div class="row"><span>Fire Brigade</span><a href="tel:0214807700">107 / 021 480 7700</a></div>
+          <div class="row"><span>Mountain Rescue (WSAR)</span><a href="tel:0219370300">021 937 0300</a></div>
+          <div class="row"><span>Paramedic (Netcare 911)</span><a href="tel:082911">082 911</a></div>
+          <div class="row"><span>Poison Unit</span><a href="tel:0861555777">0861 555 777</a></div>
+          <div class="row"><span>Police Flying Squad</span><a href="tel:10111">10111</a></div>
+          <div class="row"><span>Camps Bay SAPS</span><a href="tel:0214378140">021 437 8140</a></div>
+          <div class="row"><span>Sea Rescue (NSRI)</span><a href="tel:0214493500">021 449 3500</a></div>
+          <div class="row"><span>Trauma Unit (Mediclinic CT)</span><a href="tel:0214645500">021 464 5500</a></div>
+          <div class="row"><span>Bay Response (armed response)</span><a href="tel:0214382000">021 438 2000</a></div>
+        </div>
+        <h4>Other useful numbers</h4>
+        <div class="emergency">
+          <div class="row"><span>Taxi (Excite Taxis)</span><a href="tel:0214474444">021 447 4444</a></div>
+          <div class="row"><span>Local doctor (GP)</span><a href="tel:0871353017">087 135 3017</a></div>
+          <div class="row"><span>Dentist</span><a href="tel:0214182048">021 418 2048</a></div>
+          <div class="row"><span>Pharmacy (Sea Point)</span><a href="tel:0214341414">021 434 1414</a></div>
+        </div>`
+      },
+      {
+        title: "Fire procedure",
+        body: `<h4>In the event of a fire</h4>
+        <ul>
+          <li>Remain calm and act quickly</li>
+          <li>Small, contained fire (e.g. minor kitchen fire): use the nearest extinguisher only if safe to do so</li>
+          <li>Spreading fire, heavy smoke, or you feel unsafe: evacuate immediately and alert your property manager and the fire department</li>
+        </ul>
+        <h4>Evacuation</h4>
+        <ul>
+          <li>Leave immediately via the nearest safe exit</li>
+          <li>Don't stop for belongings</li>
+          <li>Account for everyone in your group</li>
+          <li>Assembly point: the driveway</li>
+          <li>Don't re-enter until emergency services confirm it's safe</li>
+        </ul>
+        <h4>Extinguisher locations</h4>
+        <p>Garage, laundry room, scullery, and the upstairs passage next to the sideboard.</p>
+        <div class="warn">Never leave cooking unattended. Don't overload plug points or use damaged appliances. If you smell gas, don't switch anything electrical on or off — open windows, leave the property, and contact management.</div>
+        <p>Emergency services: <a href="tel:112">112</a> (mobile) or 107 (landline). City of Cape Town Emergency Call Centre: <a href="tel:0214807700">021 480 7700</a>.</p>`
+      },
+      {
+        title: "Indemnity & house rules",
+        body: `<p>Everyone entering the villa and using its facilities does so at their own risk. The villa management company, owner, booking agent and their employees aren't liable for claims arising from death, injury, or loss of/damage to property, however caused. By booking and occupying the villa, you agree to this.</p>
+        <div class="warn"><strong>Non-smoking property.</strong> Please smoke outside only — not inside, and not on the wooden deck. Smoking indoors will result in charges for professional air/furniture cleaning, plus any costs from delayed turnaround for the next guests.</div>`
+      }
+    ]
+  },
+  {
+    id: "kitchen",
+    title: "Kitchen",
+    items: [
+      {
+        title: "Microwave",
+        body: `<p>Top right unit in the kitchen.</p>
+        <ol>
+          <li>Press MENU</li>
+          <li>Select Manual, press OK (✓)</li>
+          <li>Select Microwave, press OK</li>
+          <li>Set time with ▲/▼, press OK</li>
+          <li>Set power with ▲/▼, press START</li>
+        </ol>
+        <h4>Recommended power levels</h4>
+        <table>
+          <tr><td>900W</td><td>Reheating drinks, soups, water</td></tr>
+          <tr><td>750W</td><td>General cooking/reheating</td></tr>
+          <tr><td>650W</td><td>Cooking fish</td></tr>
+          <tr><td>500W</td><td>Sauces, egg dishes</td></tr>
+          <tr><td>350W</td><td>Stews</td></tr>
+          <tr><td>160W</td><td>Defrosting</td></tr>
+          <tr><td>90W</td><td>Softening butter, cheese</td></tr>
+        </table>`
+      },
+      {
+        title: "Induction stove",
+        body: `<h4>Turning it on</h4>
+        <p>Touch and hold ON/OFF for about a second — the display lights up with zeros at every zone.</p>
+        <h4>Using a cooking zone</h4>
+        <ul>
+          <li>Place an induction-compatible pot/pan on the zone</li>
+          <li>Select the zone, then use +/− to set power: 1–3 low/simmer, 4–6 general cooking, 7–9 high/boiling</li>
+        </ul>
+        <h4>Power boost</h4>
+        <p>Select the zone, press the P (Power) function for rapid heating at maximum power for a limited time.</p>
+        <h4>If it's locked</h4>
+        <p>Switch the hob on, then press and hold the lock key until it beeps or the lock icon disappears.</p>
+        <h4>Turning it off</h4>
+        <p>Set all zones to 0, hold ON/OFF for a second.</p>`
+      },
+      {
+        title: "Steam & convection oven (top left)",
+        body: `<p>Whirlpool built-in combination steam oven — 34-litre capacity with a removable water tank. Combines steam cooking, convection baking, steam + convection, steam defrosting, reheating and automatic 6th Sense programs.</p>
+        <h4>Before starting</h4>
+        <ol>
+          <li>Open the door, remove all accessories</li>
+          <li>Rinse the water container</li>
+          <li>Fill to the MAX mark and reinsert</li>
+          <li>Switch on at the isolator switch (wall, right of the ovens, above the wooden cabinet)</li>
+        </ol>
+        <h4>Controls</h4>
+        <p>Turn the left knob to select a cooking mode, the right knob to choose within it, then press ✓ to confirm.</p>
+        <h4>Steam cooking — best for veg, fish, eggs, rice, potatoes</h4>
+        <ol>
+          <li>Fill the water tank</li>
+          <li>Select Steam, set temperature (usually 100°C) and press ✓</li>
+          <li>Set time, press ✓</li>
+          <li>Press Start</li>
+        </ol>
+        <h4>Forced Air — cakes, muffins, roasts, pastries</h4>
+        <p>Select Forced Air → set temperature (e.g. 180°C) → set time → Start.</p>
+        <h4>Forced Air + Steam — roast chicken/pork, baked fish, bread</h4>
+        <p>Adds moisture for a crisp exterior and juicy interior.</p>
+        <h4>Reheat</h4>
+        <p>Fill water tank → Select Reheat → set time → Start.</p>
+        <h4>Steam Defrost — meat, poultry, fish, bread</h4>
+        <p>Fill water tank → Select Steam Defrost → enter food weight → Start.</p>`
+      },
+      {
+        title: "Multifunction oven (bottom left)",
+        body: `<p>Whirlpool built-in electric multifunction oven with fan-assisted cooking and grill. Functions include Conventional, Forced Air, Grill, Turbo Grill, Defrost, Keep Warm, Bread Rising, Maxi Cooking, Frozen Food, Eco Forced Air and Fast Preheat.</p>
+        <h4>To use</h4>
+        <p>Select "Traditional" as you switch on (press ✓), then use the up/down arrows to choose your mode and press ✓ again.</p>
+        <h4>Baking (most common)</h4>
+        <ol>
+          <li>Select Forced Air (fan symbol)</li>
+          <li>Set temperature (typically 160–180°C)</li>
+          <li>Press Start, allow it to preheat</li>
+          <li>Insert food when the preheat signal sounds</li>
+          <li>Set cooking time if needed</li>
+        </ol>
+        <h4>Grilling</h4>
+        <p>Select Grill or Turbo Grill → food on the upper shelf → close door → set level and time → Start.</p>
+        <h4>Fast Preheat</h4>
+        <p>Select the cooking function → choose Fast Preheat → wait to reach temperature → insert food.</p>
+        <h4>Everyday quick guide</h4>
+        <table>
+          <tr><td>Roast chicken</td><td>Forced Air, 180°C</td></tr>
+          <tr><td>Pizza</td><td>Forced Air, 220°C</td></tr>
+          <tr><td>Muffins</td><td>Forced Air, 170°C</td></tr>
+          <tr><td>Bread</td><td>Conventional, 200°C</td></tr>
+          <tr><td>Steak</td><td>Turbo Grill, high</td></tr>
+          <tr><td>Lasagne</td><td>Forced Air, 180°C</td></tr>
+          <tr><td>Defrost</td><td>Defrost, no heat</td></tr>
+        </table>`
+      },
+      {
+        title: "Induction oven (bottom right)",
+        body: `<p>Whirlpool multifunction electric oven with an integrated induction cooking function (uses a special induction plate and vessel supplied with the appliance), plus conventional baking, fan-assisted cooking, grilling, automatic recipes, bread-making and defrosting.</p>
+        <h4>To bake cakes, muffins, lasagne, etc.</h4>
+        <ol>
+          <li>Switch on (round button with a vertical line)</li>
+          <li>Select Induction Functions, press ✓</li>
+          <li>Select Food Types, press ✓</li>
+          <li>Use up/down to choose the food, press ✓</li>
+          <li>(To go back a step, press the rewind symbol)</li>
+          <li>Set the timer with up/down</li>
+          <li>Place food inside and press Start</li>
+        </ol>
+        <div class="warn">Very important: make sure all ovens are switched off after use, and the isolator switches at the wall are turned off too.</div>`
+      },
+      {
+        title: "Dishwasher",
+        body: `<p>Tall cupboard in the scullery, closest to the back door.</p>
+        <ol>
+          <li>Open the door, press the power button (far left)</li>
+          <li>Place the tablet in the dispenser inside the door, close the flap</li>
+          <li>Choose your cycle with up/down — we recommend "Quick Wash 40°" (39 minutes, saves water)</li>
+          <li>Press OK and shut the door — it starts automatically</li>
+        </ol>`
+      }
+    ]
+  },
+  {
+    id: "comfort",
+    title: "Comfort & Entertainment",
+    items: [
+      {
+        title: "Blinds & shutters (main bedroom)",
+        body: `<p>SOMFY remote is on the wall to the right of the bed (terrace side). Blinds/shutters are labelled 1–16 on the digital screen.</p>
+        <ul>
+          <li>"Study" = the nook with the sofas and coffee table</li>
+          <li>"Bed" = main bedroom area</li>
+          <li>"Dress" = walk-in closet</li>
+          <li>"Bath" = bathroom</li>
+          <li>"Shutter" = security shutter for the window next to the cupboard as you enter, on the right</li>
+          <li>"Screens" = the front layer of blinds around the room — privacy, not blackout</li>
+          <li>Option 12 ("group") and 15/16 don't have a function</li>
+        </ul>
+        <p>Use the left/right arrows to select a blind, up/down to move it.</p>
+        <div class="warn">Please don't leave blinds down with doors/windows open — wind damage is for your own account.</div>`
+      },
+      {
+        title: "Air conditioning",
+        body: `<h4>Main bedroom</h4>
+        <ul>
+          <li>Control panel on the wall to the left of the bed (ocean side)</li>
+          <li>Press ON/OFF (bottom right, above the Daikin logo)</li>
+          <li>Press MODE until you reach your setting — snowflake = COOL, sun = HEAT</li>
+          <li>Use the up/down arrows to set temperature</li>
+        </ul>
+        <h4>All other bedrooms</h4>
+        <ul>
+          <li>Remote is on the bedside table</li>
+          <li>Press the pink power button (top centre)</li>
+          <li>Press MODE — snowflake = cooling, sun = heating</li>
+          <li>Up/down arrows for temperature</li>
+        </ul>
+        <p>Please switch the aircon off when you leave a room, and keep doors/windows closed while it's running — otherwise it loses efficiency and wastes electricity.</p>`
+      },
+      {
+        title: "Television",
+        body: `<p>All TVs (main bedroom, cinema room, lounge) are smart TVs — use your own login for any app (Netflix, Prime, YouTube, etc).</p>
+        <ul>
+          <li>Turn on with the small red button, top left of the remote</li>
+          <li>Press the home (house) button for the app screen</li>
+          <li>Use the round dial to choose an app, press the middle to select</li>
+          <li>+/− controls volume</li>
+          <li>Back arrow or house button returns you to the home screen</li>
+        </ul>`
+      },
+      {
+        title: "Playing music (JBL speaker)",
+        body: `<ol>
+          <li>Press the power button to turn the speaker on</li>
+          <li>Press the Bluetooth button (right of power) — both lights should be on</li>
+          <li>On your phone, go to Bluetooth and search for devices</li>
+          <li>Select "JBL Charge 5 Wi-Fi"</li>
+        </ol>
+        <p>To disconnect: turn Bluetooth off on your phone, or press the power button to switch the speaker off.</p>`
+      },
+      {
+        title: "Gas fireplaces",
+        body: `<h4>Lounge</h4>
+        <ol>
+          <li>Lift the small silver lid to the left of the fireplace</li>
+          <li>Push the black dial down and turn anticlockwise until the igniter lights</li>
+          <li>Release and wait for it to light</li>
+          <li>Use the dial to set flame level — more anticlockwise toward "HIGH" = bigger flame</li>
+          <li>Close the silver lid once lit</li>
+        </ol>
+        <h4>Entrance fireplace</h4>
+        <p>Same process. Dials are under the black covers; the gas on/off switch is under the small grids covered with stones. Switch the gas on first — the yellow lever should be horizontal for open, vertical for closed.</p>
+        <div class="warn">Very important: make sure the gas is off before going to bed, and never leave heaters running or unattended.</div>`
+      },
+      {
+        title: "Security shutters",
+        body: `<p>Found in the lounge (door to back garden), kitchen back door, cinema room and main bedroom — each has its own SOMFY control panel.</p>
+        <table>
+          <tr><td>Main bedroom</td><td>Right as you walk in</td></tr>
+          <tr><td>Lounge</td><td>Left of the door</td></tr>
+          <tr><td>Kitchen</td><td>Right of the door</td></tr>
+          <tr><td>Cinema room</td><td>Left of the sliding door</td></tr>
+        </table>
+        <p>Up arrow opens, down arrow closes. Please make sure all shutters are closed at night before bed.</p>`
+      },
+      {
+        title: "Stacking doors",
+        body: `<ul>
+          <li>Unlock with the handle before pushing — handle up = unlocked, handle down = locked (you'll see the door shift slightly)</li>
+          <li>Once the first panel is open, latch it to the wall before stacking</li>
+          <li>Slide each panel toward the latched one — you'll see a small ball appear in the gap above; pull the panel toward you and stack it</li>
+          <li>Repeat until all panels are stacked; reverse the process to close</li>
+        </ul>
+        <div class="warn">Please be gentle — if a door feels stuck, don't force it. Ask Yandi or your property manager for help.</div>`
+      }
+    ]
+  },
+  {
+    id: "laundry",
+    title: "Laundry",
+    items: [
+      {
+        title: "Washing machine",
+        body: `<p>Laundry room, next to the garage.</p>
+        <ol>
+          <li>Press the power button to the left of the big round dial</li>
+          <li>Press the middle of the round WASHING CYCLE button to select your cycle</li>
+          <li>Detergent dispenser is inside the machine, at the base of the lid — powder on the left, softener on the right</li>
+          <li>Close the lid and press the start button (right of the round dial)</li>
+        </ol>`
+      },
+      {
+        title: "Tumble dryer",
+        body: `<p>Right next to the washing machine.</p>
+        <ol>
+          <li>Use the round dial to select your cycle</li>
+          <li>Press start</li>
+          <li>Check the water tray is empty before starting</li>
+          <li>Turn the dial back to off when finished</li>
+        </ol>`
+      }
+    ]
+  },
+  {
+    id: "outdoors",
+    title: "Outdoors",
+    items: [
+      {
+        title: "Pool & garden",
+        body: `<ul>
+          <li>Our gardener, Doctor, works Fridays 8am–4pm; Green Zone garden service visits once every two weeks — we'll let you know if a visit overlaps with your stay</li>
+          <li>Pool service also comes on Fridays — please allow both teams to continue their work</li>
+          <li>Please don't touch the pool cleaner ("creepy crawly")</li>
+          <li>Any pool or garden issues — contact your property manager</li>
+        </ul>
+        <h4>The pool cleaner</h4>
+        <p>Never remove it from the pool — the pump will be damaged if it isn't fully submerged. Camps Bay gets occasional high winds, so we can't always keep the pool spotless. If the bottom gets too dirty, call us to arrange a clean — and if you can, please skim leaves off the top yourself.</p>`
+      },
+      {
+        title: "Parking",
+        body: `<ul>
+          <li>Facing the house, use the garage on the left</li>
+          <li>All driveway parking spaces are available to you</li>
+          <li>The garage on the right is not for guest use</li>
+        </ul>`
+      },
+      {
+        title: "Outside furniture",
+        body: `<p>Please stack the lounger cushions inside (or ask Yandi to) on windy days and when you leave. Camps Bay's strong winds can blow cushions away or damage them if left out — if this happens because they weren't brought in, it's for your own account.</p>`
+      },
+      {
+        title: "Fire extinguishers",
+        body: `<p>Located in the garage, laundry room, kitchen scullery, and the passage on the middle floor.</p>`
+      }
+    ]
+  }
+];
+
+const nav = document.getElementById("quickNav");
+const contentEl = document.getElementById("content");
+
+SECTIONS.forEach(group => {
+  const a = document.createElement("a");
+  a.href = `#${group.id}`;
+  a.textContent = group.title;
+  nav.appendChild(a);
+
+  const groupEl = document.createElement("div");
+  groupEl.className = "group";
+  groupEl.id = group.id;
+
+  const titleEl = document.createElement("div");
+  titleEl.className = "group-title";
+  titleEl.innerHTML = `<h2>${group.title}</h2><div class="rule"></div>`;
+  groupEl.appendChild(titleEl);
+
+  group.items.forEach(item => {
+    const details = document.createElement("details");
+    details.className = "item";
+    details.innerHTML = `
+      <summary>${item.title}
+        <svg class="chev" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </summary>
+      <div class="item-body">${item.body}</div>
+    `;
+    groupEl.appendChild(details);
+  });
+
+  contentEl.appendChild(groupEl);
+});
+</script>
+</body>
+</html>
