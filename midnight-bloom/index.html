@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<title>Villa Midnight Bloom — House Guide</title>
+<title>Villa 4A Victoria — House Guide</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -315,11 +315,11 @@
 </svg>
     </div>
     <p class="eyebrow" id="villaEyebrow">SEASKY VILLAS · CAMPS BAY</p>
-    <h1 id="villaName">Villa Midnight Bloom</h1>
+    <h1 id="villaName">Villa 4A Victoria</h1>
     <p id="villaIntro">A warm welcome to your home for the next few days. Everything you need to know about the villa is below — tap a section to open it.</p>
   </div>
 
-  <img class="hero-photo" src="images/welcome-pool.jpg" alt="Villa Midnight Bloom pool deck" style="border-radius:0;margin-top:0;">
+  <img class="hero-photo" src="images/welcome-terrace.jpg" alt="Villa 4A Victoria terrace" style="border-radius:0;margin-top:0;">
 
   <div class="quickgrid" id="quickGrid"></div>
 
@@ -334,12 +334,12 @@
 
 <script>
 const CONFIG = {
-  villaName: "Villa Midnight Bloom",
-  location: "Camps Bay",
+  villaName: "Villa 4A Victoria",
+  location: "Bakoven",
   manager: { name: "Elijah", phone: "+27 79 879 0941" },
-  wifi: { network: "Midnight Bloom", password: "abcdef3008" },
+  wifi: { network: "Victoria Road", password: "Victoria123!@#" },
   emergencyHeadline: "112",
-  alarmCode: "6258"
+  alarmCode: "2855"
 };
 
 document.getElementById("villaName").textContent = CONFIG.villaName;
@@ -364,29 +364,29 @@ const SECTIONS = [
       {
         title: "Property managers",
         body: `<div class="photos single"><img src="images/team-managers.jpg" alt="Elijah, Hezron and Banco, your property managers"></div>
-        <p>Three property managers look after this villa. Your dedicated manager is <strong>Elijah</strong> — if you can't reach him, contact Hezron or Banco.</p>
+        <p>Three property managers look after this villa. Your dedicated manager is <strong>Elijah</strong> (middle) — if you can't reach him, contact Hezron (right) or Banco (left).</p>
         <table>
           <tr><td>Elijah (primary)</td><td><a href="tel:+27798790941">+27 79 879 0941</a></td></tr>
-          <tr><td>Hezron</td><td><a href="tel:+27760602127">+27 76 060 2127</a></td></tr>
           <tr><td>Banco</td><td><a href="tel:+27784614767">+27 78 461 4767</a></td></tr>
+          <tr><td>Hezron</td><td><a href="tel:+27760602127">+27 76 060 2127</a></td></tr>
         </table>`
       },
       {
         title: "Housekeeping",
-        body: `<div class="photos single"><img src="images/team-housekeeper.jpg" alt="Yandi, your housekeeper"></div>
-        <p>Our housekeeper, <strong>Yandi</strong>, is dependable, professional and trustworthy.</p>
-        <h4>Standard hours</h4>
+        body: `<p>Our housekeeper, <strong>Thembe</strong>, is totally reliable and trustworthy.</p>
+        <h4>Working hours</h4>
         <ul>
-          <li>Monday–Friday: 9:00am–4:00pm</li>
-          <li>Weekends & public holidays: by prior arrangement, additional charge — please enquire with management</li>
+          <li>Monday–Friday: 9am–4pm</li>
+          <li>Saturdays: no extra charge</li>
+          <li>Sundays & public holidays: additional charge — please enquire with management</li>
         </ul>
-        <p>Need her outside these hours? Arrange directly with Yandi or with whoever assists your check-in. She's off on weekends, but SeaSky will gladly arrange an alternative housekeeper.</p>
-        <p>Yandi: <a href="tel:+27790702648">+27 79 070 2648</a></p>
-        <p>Her role covers cleanliness of the house and grounds, plus washing/ironing of villa linen and towels. The washing machine and tumble dryer are available for guest use, but personal laundry isn't part of her duties.</p>
-        <h4>Gratuities</h4>
-        <p>If Yandi has taken great care of you, gratuities are always appreciated — particularly for larger groups.</p>
+        <p>Please arrange any extra requirements directly with Thembe or with whoever checks you in. Should she not be available on a weekend day, SeaSky will provide an alternative housekeeper. Thembe lives in the cottage next to the house, with her own access.</p>
+        <p>Thembe: <a href="tel:+27617364638">+27 61 736 4638</a></p>
+        <p>She's primarily employed to keep the house and surrounds clean, plus wash and iron all villa linen. The washing machine and tumble dryer are available for your personal laundry, and there's a washing line behind the house — but personal laundry isn't part of her duties.</p>
+        <h4>Tips</h4>
+        <p>Please feel free to leave Thembe a tip on departure if she's looked after you well — especially for larger groups.</p>
         <h4>Self-catering</h4>
-        <p>A starter supply of cleaning materials and toilet paper is provided. Additional supplies (laundry detergent, other consumables) are for your own account.</p>`
+        <p>A starter supply of cleaning materials and toilet paper is provided. Additional supplies, including laundry detergent, are for your own account.</p>`
       }
     ]
   },
@@ -396,56 +396,57 @@ const SECTIONS = [
     items: [
       {
         title: "Internet",
-        body: `<p>Network: <strong>${CONFIG.wifi.network}</strong> · Password: <strong>${CONFIG.wifi.password}</strong></p>
-        <p>Uncapped fibre, free throughout the villa. This is the fastest service we can provide for the area — apologies if it's slower than you're used to.</p>
-        <p>If the Wi-Fi drops, please don't touch any cables — call your property manager to sort it out.</p>`
+        body: `<p>Username: <strong>${CONFIG.wifi.network}</strong> · Password: <strong>${CONFIG.wifi.password}</strong></p>
+        <p>Uncapped fibre, free throughout the villa. This is the fastest service we can provide for the area — apologies if it's slower than what you're used to.</p>
+        <p>If the Wi-Fi drops, please don't fiddle with any cables — call your property manager to sort it out.</p>`
       },
       {
         title: "Keys",
         body: `<div class="photos single"><img src="images/keys-remote.jpg" alt="Villa keys and gate remote"></div>
         <ul>
-          <li>One set of keys per bedroom, depending on guest numbers</li>
-          <li>Each set has one remote and two silver keys (front door + pedestrian gate)</li>
+          <li>One set of keys per bedroom, depending on occupancy</li>
+          <li>Each set includes a garage remote, a pedestrian gate key, and a front door key</li>
         </ul>
         <h4>Remote buttons</h4>
         <table>
-          <tr><td>Red</td><td>Panic</td></tr>
-          <tr><td>Brown</td><td>Not in use</td></tr>
-          <tr><td>Purple</td><td>Not in use — do not press</td></tr>
-          <tr><td>Yellow</td><td>Garage on left (facing the house)</td></tr>
-          <tr><td>Green</td><td>Right sliding gate</td></tr>
-          <tr><td>Blue</td><td>Left sliding gate</td></tr>
-        </table>`
+          <tr><td>Blue</td><td>Opens the garage</td></tr>
+          <tr><td>Red</td><td>Panic button</td></tr>
+          <tr><td>Brown</td><td>Arms & disarms the alarm</td></tr>
+        </table>
+        <p>The silver key unlocks the pedestrian gate; the key with the colour tag is for the front door.</p>`
       },
       {
         title: "Setting & disarming the alarm",
-        body: `<div class="photos"><img src="images/alarm-panel-1.jpg" alt="Alarm touchscreen panel"><img src="images/alarm-panel-2.jpg" alt="Alarm arming method screen"></div>
-        <p>Alarm panels are in the garage, kitchen and main bedroom.</p>
-        <h4>Away mode (leaving the villa)</h4>
-        <ol><li>Press ARM/DISARM</li><li>Press ARM</li><li>Press ALL (outside/inside)</li><li>Press BYPASS & ARM</li></ol>
+        body: `<h4>Arming when you leave</h4>
+        <p>Make sure all doors and windows are closed and locked, then press the brown button once outside.</p>
+        <h4>Disarming on return</h4>
+        <p>Press the brown button again.</p>
         <h4>Stay mode (for the night)</h4>
-        <ol><li>Press ARM/DISARM</li><li>Press STAY</li><li>Press FORCE ARM</li></ol>
-        <p>You can then move freely inside, but not outside.</p>
-        <h4>Disarm</h4>
-        <p>Punch in <strong>${CONFIG.alarmCode}</strong>, then OK.</p>`
+        <p>Press and hold the STAY button on the keypad for 2 seconds.</p>
+        <h4>Disarming Stay mode</h4>
+        <p>Press the brown button on the remote, or punch <strong>${CONFIG.alarmCode}</strong> into the keypad.</p>`
       },
       {
         title: "Safe instructions",
-        body: `<div class="photos single"><img src="images/safe.jpg" alt="In-room safe"></div>
-        <h4>Set or change the code</h4>
+        body: `<div class="photos single"><img src="images/safe.jpg" alt="In-room electronic safe"></div>
+        <p>The safe is in the study bedroom cupboard (entry level). You'll always find the door open on arrival.</p>
         <ol>
-          <li>Leave the door open</li>
-          <li>Locate the reset button inside the battery compartment (inside the door)</li>
-          <li>Press it once — you'll hear a beep or see a light</li>
-          <li>Enter your new code (3–8 digits)</li>
-          <li>Press ✓ to confirm — the safe beeps or flashes green</li>
-        </ol>
-        <h4>Test before closing</h4>
+          <li>Press the little button inside the safe door — two beeps means any past codes have been cleared</li>
+          <li>Select a 4-digit code of your choosing and press either "A" or "B"</li>
+          <li>To lock: close the door and turn the dial anticlockwise</li>
+          <li>To unlock: punch in your code, press #, then turn the dial clockwise</li>
+        </ol>`
+      },
+      {
+        title: "Giving guests access (pedestrian gate)",
+        body: `<div class="photos"><img src="images/intercom-home.jpg" alt="Hikvision intercom home screen"><img src="images/intercom-live-view.jpg" alt="Hikvision intercom live view of the outdoor station"></div>
         <ol>
-          <li>With the door open, extend the locking bolts by turning the handle</li>
-          <li>Enter the new code, press ✓</li>
-          <li>Confirm the bolts retract</li>
-          <li>Repeat once more, then close and lock</li>
+          <li>Go to the Hikvision monitor at the front door</li>
+          <li>Press on it to light up the screen</li>
+          <li>Press "Live View"</li>
+          <li>Then press "Outdoor station"</li>
+          <li>Press the green phone button to talk to the person outside</li>
+          <li>Press the blue key button to open the gate and let them in</li>
         </ol>`
       }
     ]
@@ -457,31 +458,29 @@ const SECTIONS = [
       {
         title: "Emergency numbers",
         body: `<div class="emergency">
-          <div class="row"><span>Emergency Hotline</span><a href="tel:112">112 mobile / 107 landline</a></div>
-          <div class="row"><span>Ambulance (Public EMS)</span><a href="tel:10177">10177</a></div>
-          <div class="row"><span>Private Ambulance (ER24)</span><a href="tel:084124">084 124</a></div>
-          <div class="row"><span>Fire Brigade</span><a href="tel:0214807700">107 / 021 480 7700</a></div>
-          <div class="row"><span>Mountain Rescue (WSAR)</span><a href="tel:0219370300">021 937 0300</a></div>
-          <div class="row"><span>Paramedic (Netcare 911)</span><a href="tel:082911">082 911</a></div>
-          <div class="row"><span>Poison Unit</span><a href="tel:0861555777">0861 555 777</a></div>
-          <div class="row"><span>Police Flying Squad</span><a href="tel:10111">10111</a></div>
-          <div class="row"><span>Camps Bay SAPS</span><a href="tel:0214378140">021 437 8140</a></div>
-          <div class="row"><span>Sea Rescue (NSRI)</span><a href="tel:0214493500">021 449 3500</a></div>
-          <div class="row"><span>Trauma Unit (Mediclinic CT)</span><a href="tel:0214645500">021 464 5500</a></div>
-          <div class="row"><span>Bay Response (armed response)</span><a href="tel:0214382000">021 438 2000</a></div>
+          <div class="row"><span>Emergency Hotline</span><a href="tel:084124">084 124</a></div>
+          <div class="row"><span>Ambulance</span><a href="tel:084124">084 124</a></div>
+          <div class="row"><span>Fire Brigade (Sea Point)</span><a href="tel:0214001041">021 400 1041</a></div>
+          <div class="row"><span>Mountain Rescue</span><a href="tel:0219489900">021 948 9900</a></div>
+          <div class="row"><span>Paramedic Service</span><a href="tel:0800225599">080 022 5599</a></div>
+          <div class="row"><span>Poison Unit</span><a href="tel:0216895227">021 689 5227</a></div>
+          <div class="row"><span>Police Flying Squad</span><a href="tel:10111">10 111</a></div>
+          <div class="row"><span>Police Station (Camps Bay)</span><a href="tel:0214378140">021 437 8140</a></div>
+          <div class="row"><span>Sea Rescue</span><a href="tel:0214493500">021 449 3500</a></div>
+          <div class="row"><span>Trauma Unit</span><a href="tel:0214234835">021 423 4835</a></div>
         </div>
         <h4>Other useful numbers</h4>
         <div class="emergency">
-          <div class="row"><span>Taxi (Excite Taxis)</span><a href="tel:0214474444">021 447 4444</a></div>
-          <div class="row"><span>Local doctor (GP)</span><a href="tel:0871353017">087 135 3017</a></div>
+          <div class="row"><span>Taxi</span><a href="tel:0214474444">021 447 4444</a></div>
+          <div class="row"><span>Local doctor</span><a href="tel:0871353017">087 135 3017</a></div>
           <div class="row"><span>Dentist</span><a href="tel:0214182048">021 418 2048</a></div>
-          <div class="row"><span>Pharmacy (Sea Point)</span><a href="tel:0214341414">021 434 1414</a></div>
+          <div class="row"><span>Pharmacy</span><a href="tel:0214341414">021 434 1414</a></div>
         </div>`
       },
       {
         title: "Security",
-        body: `<p>For your safety, the house has a state-of-the-art alarm linked to Bay Response armed response unit, but we would like to make you aware of all necessary precautions to be taken to safeguard your stay.</p>
-        <p>Never open the door for anyone you do not know nor expect. There have been incidences in the area with criminals posing as government officials complete with (fake) IDs or even municipal workers claiming to work on the geyser etc. Just refuse them entry and if they persist, give them our number. We will always arrange with the relevant property manager if we require workers around the house and they will always arrive during working hours. Never on weekends unless in an emergency and you have requested action, in which case, you will be informed as to when and who will be coming to sort out the problem.</p>`
+        body: `<p>For your safety, the house has a state-of-the-art alarm linked to the Bay Response armed response unit — please take note of a few precautions to safeguard your stay.</p>
+        <p>Never open the door for anyone you do not know or expect. There have been incidents in the area with criminals posing as government officials (with fake IDs) or municipal workers claiming to work on the geyser, etc. Simply refuse them entry, and if they persist, give them our number. We'll always arrange with your property manager if we need workers around the house, and they'll only arrive during working hours — never on weekends unless it's an emergency you've requested, in which case we'll tell you who's coming and when.</p>`
       },
       {
         title: "Fire procedure",
@@ -496,19 +495,19 @@ const SECTIONS = [
           <li>Leave immediately via the nearest safe exit</li>
           <li>Don't stop for belongings</li>
           <li>Account for everyone in your group</li>
-          <li>Assembly point: the driveway</li>
+          <li>Assembly point: outside, well away from the building</li>
           <li>Don't re-enter until emergency services confirm it's safe</li>
         </ul>
         <h4>Extinguisher locations</h4>
-        <p>Garage, laundry room, scullery, and the upstairs passage next to the sideboard.</p>
+        <p>One in the kitchen, one in the downstairs living area.</p>
         <div class="warn">Never leave cooking unattended. Don't overload plug points or use damaged appliances. If you smell gas, don't switch anything electrical on or off — open windows, leave the property, and contact management.</div>
-        <p>Emergency services: <a href="tel:112">112</a> (mobile) or 107 (landline). City of Cape Town Emergency Call Centre: <a href="tel:0214807700">021 480 7700</a>.</p>`
+        <p>Emergency services: <a href="tel:084124">084 124</a>. City of Cape Town Emergency Call Centre: <a href="tel:10111">10 111</a>.</p>`
       },
       {
         title: "Indemnity & house rules",
         body: `<div class="photos single"><img src="images/no-smoking.jpg" alt="No smoking indoors"></div>
-        <p>Everyone entering the villa and using its facilities does so at their own risk. The villa management company, owner, booking agent and their employees aren't liable for claims arising from death, injury, or loss of/damage to property, however caused. By booking and occupying the villa, you agree to this.</p>
-        <div class="warn"><strong>Non-smoking property.</strong> Please smoke outside only — not inside, and not on the wooden deck. Smoking indoors will result in charges for professional air/furniture cleaning, plus any costs from delayed turnaround for the next guests.</div>`
+        <p>Everyone entering 4A Victoria and using its facilities does so at their own risk. The villa management company, owner, booking agent and their employees aren't liable for any claim arising from death or injury to any person, or damage to or loss of property, however caused. By entering 4A Victoria you voluntarily assume all risks of bodily injury and damage to property, and waive any rights you may have had against anyone who might otherwise have been liable. By booking and occupying 4A Victoria, you agree to the above.</p>
+        <div class="warn"><strong>Non-smoking property.</strong> Please smoke outside only, never indoors. Should you smoke inside, your breakage deposit will cover the air/furniture cleaning charges — and if there isn't enough time to clean before the next arrival, you'll also be charged for any refunds given to ease the next guests' discomfort.</div>`
       }
     ]
   },
@@ -518,124 +517,47 @@ const SECTIONS = [
     items: [
       {
         title: "Microwave",
-        body: `<div class="photos single"><img src="images/microwave.jpg" alt="Microwave"></div>
-        <p>Top right unit in the kitchen.</p>
-        <ol>
-          <li>Press MENU</li>
-          <li>Select Manual, press OK (✓)</li>
-          <li>Select Microwave, press OK</li>
-          <li>Set time with ▲/▼, press OK</li>
-          <li>Set power with ▲/▼, press START</li>
-        </ol>
-        <h4>Recommended power levels</h4>
-        <table>
-          <tr><td>900W</td><td>Reheating drinks, soups, water</td></tr>
-          <tr><td>750W</td><td>General cooking/reheating</td></tr>
-          <tr><td>650W</td><td>Cooking fish</td></tr>
-          <tr><td>500W</td><td>Sauces, egg dishes</td></tr>
-          <tr><td>350W</td><td>Stews</td></tr>
-          <tr><td>160W</td><td>Defrosting</td></tr>
-          <tr><td>90W</td><td>Softening butter, cheese</td></tr>
-        </table>`
-      },
-      {
-        title: "Induction stove",
-        body: `<div class="photos"><img src="images/stove-hob.jpg" alt="Induction hob"><img src="images/stove-panel.jpg" alt="Induction stove control panel"></div>
-        <h4>Turning it on</h4>
-        <p>Touch and hold ON/OFF for about a second — the display lights up with zeros at every zone.</p>
-        <h4>Using a cooking zone</h4>
+        body: `<div class="photos single"><img src="images/microwave.jpg" alt="LG microwave"></div>
+        <p>LG microwave, in the kitchen as you walk in on the left.</p>
         <ul>
-          <li>Place an induction-compatible pot/pan on the zone</li>
-          <li>Select the zone, then use +/− to set power: 1–3 low/simmer, 4–6 general cooking, 7–9 high/boiling</li>
+          <li>The easiest way to use it is the STOP and START button</li>
+          <li>Press the start button repeatedly until you reach your desired time (30-second increments)</li>
+          <li>Use the stop button to stop</li>
+          <li>It goes into sleep mode on its own once you're done</li>
+        </ul>`
+      },
+      {
+        title: "Gas hob",
+        body: `<div class="photos"><img src="images/gas-hob.jpg" alt="Gas hob"><img src="images/gas-hob-dials.jpg" alt="Gas hob dials"></div>
+        <ul>
+          <li>Turn it on at the wall first — the switch is to the right of the stove, under the glasses cabinet</li>
+          <li>The round silver dials at the base each have a small rectangle-and-circle diagram above them showing which plate they control</li>
+          <li>This hob is not self-igniting</li>
+          <li>To light a plate: pick the dial, push down, and turn anticlockwise all the way until the flame ignites</li>
+          <li>Once lit, let go and turn the dial to your desired flame size</li>
+          <li>To turn off: turn the dial clockwise back to its starting position</li>
         </ul>
-        <h4>Power boost</h4>
-        <p>Select the zone, press the P (Power) function for rapid heating at maximum power for a limited time.</p>
-        <h4>If it's locked</h4>
-        <p>Switch the hob on, then press and hold the lock key until it beeps or the lock icon disappears.</p>
-        <h4>Turning it off</h4>
-        <p>Set all zones to 0, hold ON/OFF for a second.</p>`
+        <div class="warn">Very important: once you're done cooking, please turn the wall plug off immediately.</div>`
       },
       {
-        title: "Steam & convection oven (top left)",
-        body: `<div class="photos single"><img src="images/oven.jpg" alt="Built-in ovens"></div>
-        <p>Whirlpool built-in combination steam oven — 34-litre capacity with a removable water tank. Combines steam cooking, convection baking, steam + convection, steam defrosting, reheating and automatic 6th Sense programs.</p>
-        <h4>Before starting</h4>
-        <ol>
-          <li>Open the door, remove all accessories</li>
-          <li>Rinse the water container</li>
-          <li>Fill to the MAX mark and reinsert</li>
-          <li>Switch on at the isolator switch (wall, right of the ovens, above the wooden cabinet)</li>
-        </ol>
-        <h4>Controls</h4>
-        <p>Turn the left knob to select a cooking mode, the right knob to choose within it, then press ✓ to confirm.</p>
-        <h4>Steam cooking — best for veg, fish, eggs, rice, potatoes</h4>
-        <ol>
-          <li>Fill the water tank</li>
-          <li>Select Steam, set temperature (usually 100°C) and press ✓</li>
-          <li>Set time, press ✓</li>
-          <li>Press Start</li>
-        </ol>
-        <h4>Forced Air — cakes, muffins, roasts, pastries</h4>
-        <p>Select Forced Air → set temperature (e.g. 180°C) → set time → Start.</p>
-        <h4>Forced Air + Steam — roast chicken/pork, baked fish, bread</h4>
-        <p>Adds moisture for a crisp exterior and juicy interior.</p>
-        <h4>Reheat</h4>
-        <p>Fill water tank → Select Reheat → set time → Start.</p>
-        <h4>Steam Defrost — meat, poultry, fish, bread</h4>
-        <p>Fill water tank → Select Steam Defrost → enter food weight → Start.</p>`
-      },
-      {
-        title: "Multifunction oven (bottom left)",
-        body: `<p>Whirlpool built-in electric multifunction oven with fan-assisted cooking and grill. Functions include Conventional, Forced Air, Grill, Turbo Grill, Defrost, Keep Warm, Bread Rising, Maxi Cooking, Frozen Food, Eco Forced Air and Fast Preheat.</p>
-        <h4>To use</h4>
-        <p>Select "Traditional" as you switch on (press ✓), then use the up/down arrows to choose your mode and press ✓ again.</p>
-        <h4>Baking (most common)</h4>
-        <ol>
-          <li>Select Forced Air (fan symbol)</li>
-          <li>Set temperature (typically 160–180°C)</li>
-          <li>Press Start, allow it to preheat</li>
-          <li>Insert food when the preheat signal sounds</li>
-          <li>Set cooking time if needed</li>
-        </ol>
-        <h4>Grilling</h4>
-        <p>Select Grill or Turbo Grill → food on the upper shelf → close door → set level and time → Start.</p>
-        <h4>Fast Preheat</h4>
-        <p>Select the cooking function → choose Fast Preheat → wait to reach temperature → insert food.</p>
-        <h4>Everyday quick guide</h4>
-        <table>
-          <tr><td>Roast chicken</td><td>Forced Air, 180°C</td></tr>
-          <tr><td>Pizza</td><td>Forced Air, 220°C</td></tr>
-          <tr><td>Muffins</td><td>Forced Air, 170°C</td></tr>
-          <tr><td>Bread</td><td>Conventional, 200°C</td></tr>
-          <tr><td>Steak</td><td>Turbo Grill, high</td></tr>
-          <tr><td>Lasagne</td><td>Forced Air, 180°C</td></tr>
-          <tr><td>Defrost</td><td>Defrost, no heat</td></tr>
-        </table>`
-      },
-      {
-        title: "Induction oven (bottom right)",
-        body: `<p>Whirlpool multifunction electric oven with an integrated induction cooking function (uses a special induction plate and vessel supplied with the appliance), plus conventional baking, fan-assisted cooking, grilling, automatic recipes, bread-making and defrosting.</p>
-        <h4>To bake cakes, muffins, lasagne, etc.</h4>
-        <ol>
-          <li>Switch on (round button with a vertical line)</li>
-          <li>Select Induction Functions, press ✓</li>
-          <li>Select Food Types, press ✓</li>
-          <li>Use up/down to choose the food, press ✓</li>
-          <li>(To go back a step, press the rewind symbol)</li>
-          <li>Set the timer with up/down</li>
-          <li>Place food inside and press Start</li>
-        </ol>
-        <div class="warn">Very important: make sure all ovens are switched off after use, and the isolator switches at the wall are turned off too.</div>`
+        title: "Oven",
+        body: `<div class="photos"><img src="images/oven-dial.jpg" alt="Oven function dial"><img src="images/oven-timer.jpg" alt="Oven timer display"><img src="images/oven-temp-dial.jpg" alt="Oven temperature dial"></div>
+        <ul>
+          <li>Use the two dials and digital screen on the left side</li>
+          <li>Turn the left dial to your desired oven setting — we'd recommend the conventional heating setting (marked with an arrow)</li>
+          <li>Then set your desired heat with the temperature dial</li>
+          <li>To set a timer: press the small black button under the bell icon on the digital screen, then use the +/− buttons</li>
+          <li>Make sure to turn both dials back to the centre (off) once you're done</li>
+        </ul>`
       },
       {
         title: "Dishwasher",
-        body: `<div class="photos"><img src="images/dishwasher-1.jpg" alt="Dishwasher"><img src="images/dishwasher-2.jpg" alt="Dishwasher detail"><img src="images/dishwasher-3.jpg" alt="Dishwasher control panel"></div>
-        <p>Tall cupboard in the scullery, closest to the back door.</p>
+        body: `<div class="photos"><img src="images/dishwasher-detergent.jpg" alt="Dishwasher detergent compartment"><img src="images/dishwasher-controls.jpg" alt="Dishwasher control panel"></div>
+        <p>Found under the sink area in the kitchen.</p>
         <ol>
-          <li>Open the door, press the power button (far left)</li>
-          <li>Place the tablet in the dispenser inside the door, close the flap</li>
-          <li>Choose your cycle with up/down — we recommend "Quick Wash 40°" (39 minutes, saves water)</li>
-          <li>Press OK and shut the door — it starts automatically</li>
+          <li>Stack the dishwasher and add a detergent pod in the allocated space inside the door, then close the door securely</li>
+          <li>Turn it on by pressing the button on the far left</li>
+          <li>Press the QUICK TIME button (right next to the on button) — we recommend this cycle, as it saves electricity and water</li>
         </ol>`
       }
     ]
@@ -645,99 +567,62 @@ const SECTIONS = [
     title: "Comfort & Entertainment",
     items: [
       {
-        title: "Blinds & shutters (main bedroom)",
-        body: `<div class="photos single"><img src="images/blinds-remote.jpg" alt="SOMFY blinds remote"></div>
-        <p>SOMFY remote is on the wall to the right of the bed (terrace side). Blinds/shutters are labelled 1–16 on the digital screen.</p>
+        title: "Television (main bedroom)",
+        body: `<div class="photos single"><img src="images/tv-remote.jpg" alt="Samsung smart TV remote"></div>
+        <p>This is a smart TV — you'll need your own login details for any apps. There is no DStv in this room.</p>
         <ul>
-          <li>"Study" = the nook with the sofas and coffee table</li>
-          <li>"Bed" = main bedroom area</li>
-          <li>"Dress" = walk-in closet</li>
-          <li>"Bath" = bathroom</li>
-          <li>"Shutter" = security shutter for the window next to the cupboard as you enter, on the right</li>
-          <li>"Screens" = the front layer of blinds around the room — privacy, not blackout</li>
-          <li>Option 12 ("group") and 15/16 don't have a function</li>
-        </ul>
-        <p>Use the left/right arrows to select a blind, up/down to move it.</p>
-        <div class="warn">Please don't leave blinds down with doors/windows open — wind damage is for your own account.</div>`
-      },
-      {
-        title: "Air conditioning",
-        body: `<div class="photos"><img src="images/aircon-main-bedroom.jpg" alt="Main bedroom aircon panel"><img src="images/aircon-remote.jpg" alt="Aircon remote for other bedrooms"></div>
-        <h4>Main bedroom</h4>
-        <ul>
-          <li>Control panel on the wall to the left of the bed (ocean side)</li>
-          <li>Press ON/OFF (bottom right, above the Daikin logo)</li>
-          <li>Press MODE until you reach your setting — snowflake = COOL, sun = HEAT</li>
-          <li>Use the up/down arrows to set temperature</li>
-        </ul>
-        <h4>All other bedrooms</h4>
-        <ul>
-          <li>Remote is on the bedside table</li>
-          <li>Press the pink power button (top centre)</li>
-          <li>Press MODE — snowflake = cooling, sun = heating</li>
-          <li>Up/down arrows for temperature</li>
-        </ul>
-        <p>Please switch the aircon off when you leave a room, and keep doors/windows closed while it's running — otherwise it loses efficiency and wastes electricity.</p>`
-      },
-      {
-        title: "Television",
-        body: `<div class="photos single"><img src="images/tv-remote.jpg" alt="Smart TV remote"></div>
-        <p>All TVs (main bedroom, cinema room, lounge) are smart TVs — use your own login for any app (Netflix, Prime, YouTube, etc).</p>
-        <ul>
-          <li>Turn on with the small red button, top left of the remote</li>
-          <li>Press the home (house) button for the app screen</li>
-          <li>Use the round dial to choose an app, press the middle to select</li>
-          <li>+/− controls volume</li>
-          <li>Back arrow or house button returns you to the home screen</li>
+          <li>Use the small black remote to operate the TV</li>
+          <li>Top-left red button turns it on</li>
+          <li>Use the round dial to scroll</li>
+          <li>Press inside the circle to select your desired app</li>
+          <li>To go back, press the "arrow" or "house" button</li>
         </ul>`
       },
       {
-        title: "Playing music (JBL speaker)",
-        body: `<ol>
-          <li>Press the power button to turn the speaker on</li>
-          <li>Press the Bluetooth button (right of power) — both lights should be on</li>
-          <li>On your phone, go to Bluetooth and search for devices</li>
-          <li>Select "JBL Charge 5 Wi-Fi"</li>
-        </ol>
-        <p>To disconnect: turn Bluetooth off on your phone, or press the power button to switch the speaker off.</p>`
-      },
-      {
-        title: "Gas fireplaces",
-        body: `<div class="photos"><img src="images/fireplace-1.jpg" alt="Lounge fireplace dial"><img src="images/fireplace-2.jpg" alt="Fireplace dial detail"><img src="images/fireplace-3.jpg" alt="Entrance fireplace stones"><img src="images/fireplace-stones.jpg" alt="Entrance fireplace gas switch"></div>
-        <h4>Lounge</h4>
-        <ol>
-          <li>Lift the small silver lid to the left of the fireplace</li>
-          <li>Push the black dial down and turn anticlockwise until the igniter lights</li>
-          <li>Release and wait for it to light</li>
-          <li>Use the dial to set flame level — more anticlockwise toward "HIGH" = bigger flame</li>
-          <li>Close the silver lid once lit</li>
-        </ol>
-        <h4>Entrance fireplace</h4>
-        <p>Same process. Dials are under the black covers; the gas on/off switch is under the small grids covered with stones. Switch the gas on first — the yellow lever should be horizontal for open, vertical for closed.</p>
-        <div class="warn">Very important: make sure the gas is off before going to bed, and never leave heaters running or unattended.</div>`
-      },
-      {
-        title: "Security shutters",
-        body: `<div class="photos single"><img src="images/shutters-panel.jpg" alt="Security shutter control panel"></div>
-        <p>Found in the lounge (door to back garden), kitchen back door, cinema room and main bedroom — each has its own SOMFY control panel.</p>
-        <table>
-          <tr><td>Main bedroom</td><td>Right as you walk in</td></tr>
-          <tr><td>Lounge</td><td>Left of the door</td></tr>
-          <tr><td>Kitchen</td><td>Right of the door</td></tr>
-          <tr><td>Cinema room</td><td>Left of the sliding door</td></tr>
-        </table>
-        <p>Up arrow opens, down arrow closes. Please make sure all shutters are closed at night before bed.</p>`
-      },
-      {
-        title: "Stacking doors",
-        body: `<div class="photos"><img src="images/stacking-door-1.jpg" alt="Stacking door handle"><img src="images/stacking-door-2.jpg" alt="Stacking door track"><img src="images/stacking-door-3.jpg" alt="Stacking door panel"><img src="images/stacking-door-4.jpg" alt="Stacking door handle detail"></div>
+        title: "Fireplace",
+        body: `<div class="photos"><img src="images/fireplace-vent.jpg" alt="Fireplace air vent lever"><img src="images/fireplace.jpg" alt="Ferlux fireplace"></div>
+        <p>The property is fitted with a Ferlux wood-burning fireplace for your comfort and enjoyment.</p>
+        <h4>Before lighting</h4>
         <ul>
-          <li>Unlock with the handle before pushing — handle up = unlocked, handle down = locked (you'll see the door shift slightly)</li>
-          <li>Once the first panel is open, latch it to the wall before stacking</li>
-          <li>Slide each panel toward the latched one — you'll see a small ball appear in the gap above; pull the panel toward you and stack it</li>
-          <li>Repeat until all panels are stacked; reverse the process to close</li>
+          <li>Make sure the isolator switch is on at the wall, to the left of the fireplace</li>
+          <li>Ensure the air vent/control lever is fully open — pushed to the right / extended outward = open (maximum airflow, stronger flame, easier to light); pushed to the left / inward = closed / reduced airflow (slower burn, lower heat)</li>
+          <li>Check the fireplace is clear of excess ash and old debris</li>
+          <li>Only use dry firewood — never wet wood, paper, cardboard, plastic, or other materials</li>
         </ul>
-        <div class="warn">Please be gentle — if a door feels stuck, don't force it. Ask Yandi or your property manager for help.</div>`
+        <h4>Lighting the fire</h4>
+        <ol>
+          <li>Place firelighters and small kindling in the centre of the fireplace</li>
+          <li>Light the firelighters and allow the kindling to catch properly</li>
+          <li>Add 2–3 small logs once the kindling is burning well</li>
+          <li>Close the fireplace door securely, leaving the air vent open until the fire is established</li>
+          <li>Once burning strongly, adjust the air vent to control the heat output</li>
+        </ol>
+        <h4>While in use</h4>
+        <ul>
+          <li>The glass and metal surfaces become extremely hot — please always supervise children</li>
+          <li>Never leave the fire unattended with the door open</li>
+          <li>Do not overload the fireplace with excessive wood</li>
+          <li>Ensure the room remains ventilated</li>
+        </ul>
+        <h4>Extinguishing the fire</h4>
+        <ul>
+          <li>Allow the fire to burn down naturally</li>
+          <li>Do not pour water onto the fire or hot ashes — this may damage the fireplace</li>
+          <li>Ensure embers are fully extinguished before leaving the property or going to bed</li>
+        </ul>
+        <div class="warn">If smoke enters the room, please open a window and notify property management immediately.</div>
+        <h4>Fan / blower control</h4>
+        <p>The small white switch in the bottom-right corner of the fireplace controls the heat circulation fan, which pulls cool room air around the hot firebox and blows warm air back into the room.</p>
+        <table>
+          <tr><td>○ (circle)</td><td>Off</td></tr>
+          <tr><td>|</td><td>Low fan speed</td></tr>
+          <tr><td>||</td><td>High fan speed</td></tr>
+        </table>
+        <p>Leave it off while lighting the fire. Once the fire is burning strongly and the fireplace is hot (usually after 15–30 minutes), switch to Low for gentle heat circulation or High for stronger airflow and quicker room heating. If you turn it on too early, it may blow cool air at first because the firebox hasn't heated up yet — only switch the fan on once the fire is well established.</p>`
+      },
+      {
+        title: "Underfloor heating",
+        body: `<p>Due to South Africa's electricity constraints, this facility has been disconnected — it uses an extreme amount of power. Please use the heaters provided in every room if you're cold, and kindly turn them all off when leaving the house, to help save electricity.</p>`
       }
     ]
   },
@@ -747,24 +632,22 @@ const SECTIONS = [
     items: [
       {
         title: "Washing machine",
-        body: `<div class="photos"><img src="images/washer-panel.jpg" alt="Washing machine control panel"><img src="images/washer-open.jpg" alt="Washing machine open"></div>
-        <p>Laundry room, next to the garage.</p>
+        body: `<div class="photos single"><img src="images/washing-machine-panel.jpg" alt="Washing machine control panel"></div>
+        <p>Found in the kitchen, under the microwave.</p>
         <ol>
-          <li>Press the power button to the left of the big round dial</li>
-          <li>Press the middle of the round WASHING CYCLE button to select your cycle</li>
-          <li>Detergent dispenser is inside the machine, at the base of the lid — powder on the left, softener on the right</li>
-          <li>Close the lid and press the start button (right of the round dial)</li>
+          <li>Turn the round dial to your desired cycle — we'd recommend the Daily Xpress cycle</li>
+          <li>Press the round start button on the far right</li>
+          <li>Once the cycle is complete, please turn the dial back to On/Off</li>
         </ol>`
       },
       {
         title: "Tumble dryer",
-        body: `<div class="photos"><img src="images/dryer-top.jpg" alt="Tumble dryer top"><img src="images/dryer-dial.jpg" alt="Tumble dryer dial"></div>
-        <p>Right next to the washing machine.</p>
+        body: `<div class="photos"><img src="images/tumble-dryer-panel.jpg" alt="Tumble dryer control panel"><img src="images/tumble-dryer.jpg" alt="Tumble dryer in the garage"></div>
+        <p>Found in the garage.</p>
         <ol>
-          <li>Use the round dial to select your cycle</li>
-          <li>Press start</li>
-          <li>Check the water tray is empty before starting</li>
-          <li>Turn the dial back to off when finished</li>
+          <li>Turn the dial to your desired setting</li>
+          <li>Press the "Start/Pause" button</li>
+          <li>Please turn the dial to "Off" once you're done</li>
         </ol>`
       }
     ]
@@ -774,31 +657,24 @@ const SECTIONS = [
     title: "Outdoors",
     items: [
       {
-        title: "Pool & garden",
-        body: `<ul>
-          <li>Our gardener, Doctor, works Fridays 8am–4pm; Green Zone garden service visits once every two weeks — we'll let you know if a visit overlaps with your stay</li>
-          <li>Pool service also comes on Fridays — please allow both teams to continue their work</li>
-          <li>Please don't touch the pool cleaner ("creepy crawly")</li>
-          <li>Any pool or garden issues — contact your property manager</li>
-        </ul>
-        <h4>The pool cleaner</h4>
-        <p>Never remove it from the pool — the pump will be damaged if it isn't fully submerged. Camps Bay gets occasional high winds, so we can't always keep the pool spotless. If the bottom gets too dirty, call us to arrange a clean — and if you can, please skim leaves off the top yourself.</p>`
+        title: "Parking bays",
+        body: `<p>Two small vehicles can fit inside the enclosed garage, plus two more spaces in the driveway outside the garage.</p>`
       },
       {
-        title: "Parking",
-        body: `<ul>
-          <li>Facing the house, use the garage on the left</li>
-          <li>All driveway parking spaces are available to you</li>
-          <li>The garage on the right is not for guest use</li>
-        </ul>`
+        title: "The pool cleaner (creepy crawly)",
+        body: `<p>The pool filter runs on a timer during the day — please don't change this yourself. Call the management company for any changes you'd like to the pool setting.</p>
+        <p>The pool cleaner should never be removed from the pool, as the pump will be damaged if it isn't kept fully submerged.</p>
+        <p>We have a regular pool cleaning company who checks the pool — please allow them access to keep it clear. Camps Bay gets the occasional high wind, so we can't always control the pool's cleanliness. If you find it too dirty at the bottom, please call us to arrange a clean — we'd appreciate it if you can remove any leaves off the top yourself.</p>`
       },
       {
-        title: "Outside furniture",
-        body: `<p>Please stack the lounger cushions inside (or ask Yandi to) on windy days and when you leave. Camps Bay's strong winds can blow cushions away or damage them if left out — if this happens because they weren't brought in, it's for your own account.</p>`
+        title: "External contractors",
+        body: `<p>We use the services of professional pool cleaners as well as a garden service. They have a regular visit routine, and the housekeeper or management company can give you details of the days they're due.</p>
+        <p>These services keep 4A Victoria in the immaculate condition our guests have come to appreciate. The days for service are all pre-arranged and cannot be changed.</p>
+        <div class="warn">Should you refuse them access, they'll charge us a fee of R500, which we'll deduct from your breakage deposit — your co-operation is much appreciated.</div>`
       },
       {
         title: "Fire extinguishers",
-        body: `<p>Located in the garage, laundry room, kitchen scullery, and the passage on the middle floor.</p>`
+        body: `<p>You'll find one in the kitchen and one in the downstairs living area.</p>`
       }
     ]
   },
@@ -808,8 +684,8 @@ const SECTIONS = [
     items: [
       {
         title: "Conduct Agreement",
-        body: `<p>*This document will be sent to all guests over the age of 18 years
-old via DocuSign to be completed digitally*</p>
+        body: `<p>*This document has been sent to all guests over the age of 18 years
+old via DocuSign who signed it digitally*</p>
 <p>These clauses are in place not only to help us maintain the villa to
 the highest standard of luxury and care, but also to ensure that our
 villa is the right fit for you. We take them very seriously, because
@@ -825,8 +701,8 @@ stay.</p>
 <p>These Booking Conditions outline the Terms of your stay with us.
 Please review them carefully before signing.</p>
 <h4>1. Booking Details</h4>
-<p>Property: <strong>Villa Midnight Bloom</strong><br/>
-Address: 3 Horak Ave, Camps Bay, Cape Town</p>
+<p>Property: <strong>Villa 4A Victoria</strong><br/>
+Address: 4A Victoria Road, Bakoven, Cape Town</p>
 <p>Arrival Date: …………………………………….</p>
 <p>Departure Date: ……………………………….</p>
 <p>Flight Details &amp; ETA: …………………………….</p>
@@ -923,7 +799,7 @@ Agreement</strong> may be at the property.</li>
 <li>Noise complaint = <strong>immediate eviction.</strong><br/>
 <strong>No noise or disturbance</strong> is allowed at any time,
 including shouting, music, loud bass, and revving cars.<br/>
-Municipal bylaws always apply.</li>
+Municipal bylaws apply at all times.</li>
 <li><strong>No illegal drugs or excessive alcohol</strong> use is
 allowed.<br/>
 The property manager may inspect the property if there’s a reasonable
@@ -993,7 +869,7 @@ concerns
 <li>Steep drops from the patios</li>
 <li>Unfenced swimming pool, which does not have a pool
 cover.</li>
-<li>Stairs</li>
+<li>Steps</li>
 </ul></li>
 <li>Guests who choose to stay with children do so entirely at their
 own risk and are strongly advised to take all necessary precautions
@@ -1059,7 +935,7 @@ power returns.</li>
 <li>We’ll always do our best to make sure you’re comfortable, but
 please note that we aren’t able to offer refunds for any inconvenience
 caused by load shedding, and we can’t take responsibility for any damage
-to electronic equipment because of it.</li>
+to electronic equipment as a result of it.</li>
 </ul>
 <h4>22. Complaints</h4>
 <ul>
@@ -1184,7 +1060,10 @@ It is agreed between us, and the persons named on this agreement, that
 any dispute shall be subject to the exclusive jurisdiction of the South
 African Courts.</p>
 </li>
-</ul>`
+</ul>
+<h4>ACKNOWLEDGEMENT</h4>
+<p>I acknowledge and agree to all the clauses herein and understand that
+any violation of these terms may result in immediate eviction.</p>`
       }
     ]
   }
